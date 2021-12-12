@@ -1,0 +1,174 @@
+<!--
+
+::::::::::::::TABELA::::::::::::
+
+		"titulo" => "", - OK
+		"ativo" => false, - OK
+		"ano" => "", - OK
+		"km" => "", - OK
+		"combustivel" => "", - OK
+		"cambio" => "", - OK
+		"cor" => "", - OK
+		"carroceria" => "", - OK
+		"imagens" => "[]", - OK
+		"valor" => "R$ 0,00", - OK
+		"descricao" => "", - OK
+		"itens" => "" - OK
+
+::::::::::::::::::::::::::::::::
+
+-->
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title ">{TITLE}</h3>
+            </div>
+            <div>
+                <div class="col text-right">
+                    <button class="btn btn-outline-danger" onclick="return Go('produto/listar')"><i class="la la-arrow-left"></i>&nbsp;Voltar</button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-info" onclick="$('#dados_produto').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+                </div>
+    		</div>
+        </div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-8">
+                <div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="dados_produto">
+                            <div class="m-portlet__body">
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-2"><label class="col-form-label">Esta ativo?</label></div>
+								  <div class="col-2">
+									<div>
+  										<span class="form-group m-form__group text-center" style="display: inline-block;">
+  											<input data-switch="true" data-value="{ativo}" type="checkbox" data-name="ativo" data-bool=true>
+  										</span>
+  									</div>
+								  </div>Auto Rodar Veículos
+Nossa empresa já esta atuando no mercado de veículos semi-novos a 25 anos, procurando sempre selecionar veículos de qualidade e procedência, buscando um atendimento de excelência, amizade e confiança com os nossos clientes, aqui você sempre vai encontrar o que procura com qualidade.
+
+Estoque diferenciado, trabalhos com todas as marcas.
+								  <div class="help-block col-md pt-2" style="color: #898989;">Caso esteja desativado, o ve&iacute;culo n&atilde;o estar&aacute; dispon&iacute;vel no site.</div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1">
+								      <input data-name="id"type="hidden"value="{id}" />
+								      <input data-name="tp"type="hidden"value="prod" />
+								  </div>
+								  <label class="col-form-label col-2">T&iacute;tulo do an&uacute;ncio</label>
+								  <div class="col-7">
+								      <input class="form-control m-input" type="text" data-name="titulo" value="{titulo}">
+								  </div>
+								</div>
+								<div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-2">Pre&ccedil;o do Ve&iacute;culo</div>
+								  <div class="col-2">
+										<input type="text" data-name="valor" class="form-control money" value="{valor}"/>
+									</div>
+								</div>
+                                <div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+                                <div class="form-group m-form__group row">
+									<div class="col-1"></div>
+									<div class="col-2">Dados T&eacute;cnicos</div>
+									<div class="col">
+										<label class="col col-form-label text-center">Ano</label><br>
+                                        <input type="text" data-name="ano" class="form-control" value="{ano}"/>
+                                    </div>
+
+									<div class="col">
+										<label class="col col-form-label text-center">KM</label><br>
+                                        <input type="text" data-name="km" class="form-control" value="{km}"/>
+                                    </div>
+
+									<div class="col">
+										<label class="col col-form-label text-center">Combust&iacute;vel</label><br>
+                                        <input type="text" data-name="combustivel" class="form-control" value="{combustivel}"/>
+                                    </div>
+
+									<div class="col-2"></div>
+
+								</div><div class="form-group m-form__group row"><div class="col-3"></div>
+
+									<div class="col">
+										<label class="col col-form-label text-center">C&acirc;mbio</label><br>
+										<input type="text" data-name="cambio" class="form-control" value="{cambio}"/>
+									</div>
+
+									<div class="col">
+										<label class="col col-form-label text-center">Cor</label><br>
+										<input type="text" data-name="cor" class="form-control" value="{cor}"/>
+									</div>
+
+									<div class="col">
+										<label class="col col-form-label text-center">Carroceria</label><br>
+                                        <input type="text" data-name="carroceria" class="form-control" value="{carroceria}"/>
+                                    </div>
+
+									<div class="col-2"></div>
+
+                                </div>
+								<div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-1"></div><label class="col-2 col-form-label">Itens de veículo</label>
+                                    <div class="col-7">
+                                        <input data-name="itens" data-value='[]' placeholder="Insira itens" class="form-control tags" />
+										<div class="help-block mt-2" style="color: #898989">Basta digitar um item e pressionar <b>ENTER</b> para assim adiciona-lo.</div>
+                                    </div>
+                                </div>
+								<div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-1"></div><label class="col-2 col-form-label">Sobre o veículo</label>
+                                    <div class="col-7">
+										<textarea type=summernote data-name="descricao" style="height: 100px" class="summernote">{descricao}</textarea>
+                                    </div>
+                                </div>
+								<div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+                                <div class="form-group m-form__group row">
+                                    <div class="col-1"></div><label class="col-2 col-form-label">Gerir imagens do ve&iacute;culo</label>
+                                    <div class="col-7">
+                                        <form action="{myurl}" method="post" class="col-12" id="img_upload" style="border: 0;">
+                                            <div class="m-dropzone" style="border: 0;">
+                                            <div class="m-dropzone__msg dz-message needsclick">
+                                                <h3 class="m-dropzone__msg-title m-btn m-btn--pill btn-outline-info btn" style="padding: 16px;">Clique aqui para realizar o upload</h3>
+                                            </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="gallery" class="col-12 row fotos-produto sortable start"><div class="col text-center">Voc&ecirc; ainda n&atilde;o fez o upload de imagens...</div></div>
+                                <div class="col-12"><br><br></div>
+								<input type=hidden data-name="imagens" data-json=true value='[]' />
+                            </div>
+                            <div class="m-portlet__foot m-portlet__foot--fit">
+								<div class="m-form__actions">
+									<div class="row">
+                                        <div class="col-12"><br>
+										</div>
+                                        <div class="col-md-4">
+										</div>
+                                        <div class="col-md-4 text-right">
+											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+										</div>
+                                            <div class="col-12"><br>
+    										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/produtos.js"></script>

@@ -1,0 +1,91 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+    	<div class="d-flex align-items-center">
+    		<div class="mr-auto">
+    			<h3 class="m-subheader__title">Cupons de Desconto da Loja</h3>
+    		</div>
+    		<div>
+                <div class="col-7 text-right">
+                    <button class="btn btn-info" onclick="$('#categorias').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+                </div>
+    		</div>
+    	</div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+    		<div class="col-xl-12 col-lg-8">
+    			<div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+    				<div class="tab-content">
+    					<div class="tab-pane active" id="categorias">
+    						<div class="m-form m-form--fit m-form--label-align-right">
+    							<div class="m-portlet__body">
+									<div class="p-4 m-4">
+										<h2>Dica:</h2>
+										<h6 class="text-center">No valor do desconto, use uma porcentagem (%) ao final com um valor de 05 a 90 para definir um desconto-percentual.<br>Para valor fixo (ex.: R$ 178,00), basta digitar apenas o valor sem conter o caracter porcentagem (%)</h6>
+									</div>
+                                    <div class="row form-group m-form__group repeater-instance">
+                                        <div data-repeater-list="" class="col-12">
+                                            <div data-repeater-item="" class="row m--margin-bottom-10">
+												<div class="col-2"></div>
+												<div class="col-5">
+													<div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                #
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control m-input" style="text-transform: uppercase;" placeholder="Codigo  do Cupom" data-option="text" />
+                                                    </div>
+                                                </div>
+												<div class="col-3">
+													<div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                $
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control m-input" placeholder="Valor do desconto" data-option="text" />
+                                                    </div>
+                                                </div>
+                                                <button data-repeater-delete="delete" class="m--hide btn btn-outline-danger m-btn m-btn--icon"><i class="la la-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <br />
+                                            <hr />
+                                            <br />
+                                        </div>
+                                        <div class="col-6 offset-3 text-center">
+                                            <div data-repeater-create="" class="btn btn-outline-success m-btn m-btn--icon">
+                                                <span>
+                                                    <i class="la la-plus"></i>
+                                                    <span>Adicionar Opção</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-portlet__foot m-portlet__foot--fit">
+    								<div class="m-form__actions">
+    									<div class="row">
+    										<div class="col-md-4">
+    										</div>
+                                            <div class="col-md-4 text-right">
+    											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/repeater.js"></script>
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/cupons.js"></script>

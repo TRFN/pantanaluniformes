@@ -1,0 +1,229 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title ">{TITLE}</h3>
+            </div>
+            <div>
+				<div class="col text-right">
+					<button class="btn btn-outline-danger" onclick="return Go('pagina/listar')"><i class="la la-arrow-left"></i>&nbsp;Voltar</button>&nbsp;&nbsp;&nbsp;
+                    <a href="/{id}/" target=_blank class="btn btn-outline-info"><i class="la la-globe"></i>&nbsp;Visualizar no Site</a>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-info" onclick="$('#dados').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+                </div>
+    		</div>
+        </div>
+    </div>
+    <!-- END: Subheader -->
+
+	<main style="{hidden}" id="app-page-maker">
+		<header id="sections">
+			<section>
+		        <content>
+					<div id="gallery" class="form-group m-form__group row start" style="height: 100%;">
+		                <div class="col-1"></div>
+		                <label class="col-2 col-form-label">&nbsp;</label>
+		                <div class="col-7" style="height: 100%; background: transparent;">
+		                    <br />
+		                    <br />
+		                    <br />
+		                    <br />
+		                    <form action="{myurl}" method="post" class="col-12 dzn" style="border: 0; height: 100%; background: transparent;">
+		                        <div class="m-dropzone" style="border: 0;">
+		                            <div class="m-dropzone__msg dz-message needsclick" style="height: 100%; background: transparent;">
+		                                <h3 class="m-dropzone__msg-title m-btn m-btn--pill btn-outline-info btn" style="padding: 16px; position: absolute; top: 30%; left: 10%;"><i class="la la-photo"></i> Carregar Imagem</h3>
+		                            </div>
+		                        </div>
+		                    </form>
+		                </div>
+						%1
+		            </div>
+		            <div class="col-12">
+		                <br />
+		                <br />
+		            </div>
+		        </content>
+		        <data>{imagem}</data>
+		    </section>
+gallery
+		    <section>
+		        <content><div class="edit-area m-0 p-0 mb-1 px-2" data-name="sub-titulo">%1</div></content>
+		        <data>{sub-titulo}</data>
+		    </section>
+
+		    <section>
+		        <content><div class="edit-area m-0 p-0 mb-1 px-2" data-name="titulo">%1</div></content>
+		        <data>{titulo}</data>
+		    </section>
+
+		    <section>
+		        <content>
+		            <div class="m-0 p-0 mb-1 px-2"><br /></div>
+		        </content>
+		        <data></data>
+		    </section>
+
+		    <section>
+		        <content><div class="edit-area m-0 p-0 mb-1 px-2" data-name="conteudo" style="min-height: 350px;">%1</div></content>
+		        <data>
+		            {conteudo}
+		        </data>
+		    </section>
+
+			<section>
+		        <content>
+		            <div id="gallery2" class="form-group m-form__group row start" style="height: 100%;width: 100%;">
+		                <div class="col-1"></div>
+		                <label class="col-2 col-form-label">&nbsp;</label>
+		                <div class="0%col-7" style="height: 100%;width: 100%; background: transparent;">
+		                    <br />
+		                    <br />
+		                    <br />
+		                    <br />
+		                    <form action="{myurl}?capa=1" method="post" class="col-12 dzn2" style="border: 0;width: 100%; background: transparent;">
+		                        <div class="m-dropzone" style="border: 0;">
+		                            <div class="m-dropzone__msg dz-message needsclick" style="height: 100%;width: 100%; background: transparent;">
+		                                <h3 class="m-dropzone__msg-title m-btn m-btn--pill btn-outline-info btn" style="padding: 16px; position: absolute; top: -5%;left: 43%;"><i class="la la-photo"></i> Carregar Capa</h3>
+		                            </div>
+		                        </div>
+		                    </form>
+		                </div>
+						%1
+		            </div>
+		            <div class="col-12">
+		                <br />
+		                <br />
+		            </div>
+		        </content>
+		        <data>{imagem2}</data>
+		    </section>
+		</header>
+		<header id="models">
+			<section name="sk1">
+				<div class="edit-area" style="width: 99%; height: 250px; margin-bottom: 1%;">
+					%6
+				</div>
+				<div class="edit-area" style="display: inline-block;height: 90.7%;margin-right: 1%;width: 38% !important; max-height:500px;position:absolute;">
+					%1
+				</div>
+				<div style="width: 59%!important; display: inline-block; margin-left: 40%;">
+				   	%2
+					%4
+					%3
+					%4
+					%5
+				</div>
+			</section>
+
+			<section name="sk2">
+				<div class="edit-area" style="width: 99%; height: 250px; margin-bottom: 1%;">
+					%6
+				</div>
+				<div style="width: 58%!important; display: inline-block; margin-right: 40%;">
+					%2
+					%4
+					%3
+					%4
+					%5
+				</div>
+				<div style="clear:both; display: inline-block;"></div>
+				<div class="edit-area" style="display: inline-block;height: 90.7%;margin-right: 1%;width: 39% !important; position: absolute;height: 500px;right: 1.15%;">
+					%1
+				</div>
+			</section>
+		</header>
+	</main>
+
+    <div class="m-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-8">
+                <div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+                    <div class="tab-content">
+                        <div class="tab-pane active row" id="dados">
+                            <div class="m-portlet__body p-4 m-0">
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-2"><label class="col-form-label">Esta página está ativa?</label></div>
+								  <div class="col-2">
+									<div>
+  										<span class="form-group m-form__group text-center" style="display: inline-block;">
+  											<input data-switch="true" data-value="{ativo}" type="checkbox" data-name="ativo" data-bool=true>
+  									</div>
+								  </div>
+								  <div class="help-block col-md pt-2" style="color: #898989;">Caso esteja desativada, a p&aacute;gina n&atilde;o estar&aacute; dispon&iacute;vel no site.</div>
+								</div>
+
+								<div class="form-group m-form__group row">
+									<div class="col-1"><br /></div>
+									<div class="col-lg-2 col-md-3 col-sm-12 p-4 my-2">
+										<label class="pt-3">Nome da p&aacute;gina:</label>
+									</div>
+
+									<div class="input-group col-lg-6 col-md-8 col-sm-12 p-4 my-2">
+										<div class="input-group-prepend">
+											<span class="input-group-text">
+												<i class="la la-pencil"></i>
+											</span>
+										</div>
+										<input type="text" data-name="nome" value="{nome}" class="form-control m-input" placeholder="Minha página" data-option="text" />
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row">
+									<div class="col-1"><br /></div>
+									<div class="col-lg-2 col-md-3 col-sm-12 p-4 my-2">
+										<label class="pt-3">Modelo da p&aacute;gina:</label>
+									</div>
+
+									<div class="input-group col-lg-6 col-md-8 col-sm-12 p-4 my-2">
+										<div class="btn-group mdl-master" role="group">
+										  <button onclick="page_set_model(0)" type="button" class="sk1 mdl btn btn-secondary">Modelo 1</button>
+										  <button onclick="page_set_model(1)" type="button" class="sk2 mdl btn btn-secondary">Modelo 2</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+
+								<div class="form-group m-form__group row p-1 pl-3">
+								  <div class="col-0">
+								      <input data-name="id"type="hidden"value="{id}" />
+								      <input data-name="tp"type="hidden"value="prod" />
+									  <input data-name="mdl"type="hidden"value="{mdl}" />
+								  </div>
+
+								  <div class="form-group m-form__group col-12" id="app"><div style="position: absolute; top:45%; left: calc( 50% - 16px );"><img width=32 src="/images/loading.gif" /></div></div>
+
+								</div>
+								<div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+                            </div>
+                            <div class="m-portlet__foot m-portlet__foot--fit">
+								<div class="m-form__actions">
+									<div class="row">
+                                        <div class="col-12"><br>
+										</div>
+                                        <div class="col-md-4">
+										</div>
+                                        <div class="col-md-4 text-right">
+											<button onclick="saveData();" class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+										</div>
+                                            <div class="col-12"><br>
+    										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script lwdk-addons lwdk-vars="on" src="js/admin/forms/produtos.js"></script> -->
+
+<script lwdk-addons lwdk-vars="on" src="/js/admin/paginas/library.js"></script>
+
+<script lwdk-addons lwdk-vars="on" src="/js/admin/paginas/app.js"></script>
+
+<script lwdk-addons lwdk-vars="on" src="/js/admin/forms/paginas.js"></script>

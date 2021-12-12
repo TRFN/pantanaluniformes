@@ -1,0 +1,40 @@
+<div class="col-12 opcao_menu row p-4 repeater-instance">
+
+    <div class="col-5">
+        <label><strong>Ir para: </strong></label>
+        <select data-name="link" class="form-control m_selectpicker link">
+            <option value="javascript:;">(Vazio)</option>
+            {opcoes_link}
+        </select>
+    </div>
+
+    <div class="col-4">
+        <label><strong>Texto: </strong></label>
+        <input data-name="texto" class="form-control txt" type="text" placeholder="Ex: O Santuário" />
+    </div>
+
+    <div class="col-2">
+        <label><strong>Ordem: </strong></label>
+        <select data-name="ordem" class="form-control m_selectpicker">
+            {ordens}
+        </select>
+    </div>
+
+    <div class="col-1">
+        <div><br></div>
+        <span data-repeater-create="submenu" class="btn btn-accent m-btn m-btn--icon btn-sm"><i class="la la-plus"></i> Sub-menu</span>
+    </div>
+
+    <div class="col-12">
+        <div class="sortable row" data-repeater-list="submenu">
+            <span class="col-3 p-4 offset-1 my-4" data-repeater-item="submenu" style="background-color: #fff; border-radius: 6px; box-shadow: 0px 0px 1px #aaa;">
+                <br /><label>Ir Para: </label>
+                <select data-name="link" data-live-search="true" class="form-control m_selectpicker link">
+                    {opcoes_link}
+                </select><br /><br />
+                <label>Texto submenu: </label>
+                <input data-name="texto" class="form-control txt" type="text" placeholder="Ex: Quem Somos" /><button data-repeater-delete="submenu" class="btn btn-outline-danger m-btn btn-sm m-btn--icon" style="position: absolute;top: 8px;right: 8px;"><i class="la la-trash"></i> Remover</button>
+            </span>
+        </div>
+    </div>
+</div>

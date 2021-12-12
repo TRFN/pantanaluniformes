@@ -1,0 +1,36 @@
+# BEGIN
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine on
+
+    Options -MultiViews
+
+    DirectoryIndex index.php
+
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/javascript text/css application/x-javascript
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4.0[678] no-gzip
+    BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+
+    # Adicionar barra no final da URL, caso não tenha.
+    RewriteCond %{REQUEST_URI} !(/$|\.)
+    RewriteRule ^ %{REQUEST_URI}/ [L,R=301]
+
+    RewriteCond %{https} off
+    RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+
+</IfModule>
+
+<FilesMatch "\.(htaccess|data)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# END

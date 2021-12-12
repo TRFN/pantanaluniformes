@@ -1,0 +1,9 @@
+/* Correcao cores do menu */
+
+.hdr-topline a:hover, .hdr-topline li:hover, .hdr-topline li a:hover, .hdr-topline li a:hover i, .hdr-topline li:hover a, .hdr-topline i:hover {
+    color: yellow!important;
+}
+
+.loading-page {
+    background-color: #851117!important;
+}

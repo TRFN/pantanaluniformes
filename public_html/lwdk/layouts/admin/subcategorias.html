@@ -1,0 +1,87 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+    	<div class="d-flex align-items-center">
+    		<div class="mr-auto">
+    			<h3 class="m-subheader__title">Sub-Categorias de Produto</h3>
+    		</div>
+            <div>
+                <div class="col-7 text-right">
+                    <button class="btn btn-info" onclick="$('#subcategorias').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+                </div>
+    		</div>
+    	</div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+    		<div class="col-xl-12 col-lg-8">
+    			<div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+    				<div class="tab-content">
+    					<div class="tab-pane active" id="subcategorias">
+    						<div class="m-form m-form--fit m-form--label-align-right">
+    							<div class="m-portlet__body">
+                                    <div class="row form-group m-form__group ">
+                                        <div class="col-md-4 offset-md-4">
+                                            <label>Pesquisar:</label>
+                                            <input class="pesquisa form-control m-form--fit" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row form-group m-form__group repeater-instance">
+                                        <div data-repeater-list="" class="col-12">
+                                            <div data-repeater-item="" class="row m--margin-bottom-10">
+                                                <div class="col-2"></div>
+                                                <div class="col-8">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="flaticon-edit"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control m-input" placeholder="Nome da SubCategoria" data-option="text" />
+                                                        <select data-live-search=true class="m_selectpicker form-control">
+                                                            <option disabled selected class="m--hide">Selecione uma Categoria Vinculada</option>
+                                                            <option>{opcoes}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <button data-repeater-delete="delete" class="m--hide btn btn-outline-danger m-btn m-btn--icon"><i class="la la-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <br />
+                                            <hr />
+                                            <br />
+                                        </div>
+                                        <div class="col-6 offset-3 text-center">
+                                            <div data-repeater-create="" class="btn btn-outline-success m-btn m-btn--icon">
+                                                <span>
+                                                    <i class="la la-plus"></i>
+                                                    <span>Adicionar Opção</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-portlet__foot m-portlet__foot--fit">
+    								<div class="m-form__actions">
+    									<div class="row">
+    										<div class="col-md-4">
+    										</div>
+                                            <div class="col-md-4 text-right">
+    											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/repeater.js"></script>
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/subcategorias.js"></script>

@@ -1,0 +1,152 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+    	<div class="d-flex align-items-center">
+    		<div class="mr-auto">
+    			<h3 class="m-subheader__title">Contatos da Loja</h3>
+    		</div>
+    		<div>
+                <div class="col-7 text-right">
+                    <button class="btn btn-info" onclick="$('#contatos').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+                </div>
+    		</div>
+    	</div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+    		<div class="col-xl-12 col-lg-8">
+    			<div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+    				<div class="tab-content">
+    					<div class="tab-pane active" id="contatos">
+    						<div class="m-form m-form--fit m-form--label-align-right">
+    							<div class="m-portlet__body">
+                                    <div class="row form-group m-form__group">
+                                        <div class="col-12">
+                                            <div class="row m--margin-bottom-10">
+                                                <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Whatsapp:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-whatsapp"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="whatsapp" class="form-control m-input phone" placeholder="(99) 99999-9999" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Youtube:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-youtube"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="youtube" class="form-control m-input" placeholder="https://www.youtube.com/c/xxxxxxxxxxxxx" data-option="text" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Instagram:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-instagram"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="instagram" class="form-control m-input" placeholder="https://www.instagram.com/xxxxxxx/" data-option="text" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Facebook:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-facebook"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="facebook" class="form-control m-input" placeholder="https://www.facebook.com/xxxxxx/" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Email:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-envelope"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="email" class="form-control m-input" placeholder="xxxxxx@xxxxxx.xxx.xx" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Endereço:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-map"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="endereco-texto" class="form-control m-input" placeholder="Rua X, nY bairro Z" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Google Maps (URL Link):</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-globe"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="endereco-url" class="form-control m-input" placeholder="https://goo.gl/maps/xxxxxxxxxxxxx" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col p-4 my-2">
+                                                    <label>Google Maps (URL Incorpora&ccedil;&atilde;o):</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-asterisk"></i>
+                                                            </span>
+                                                        </div>
+                                                        <textarea type="text" data-name="endereco-mapa" placeholder="https://www.google.com/maps/embed?pb=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" rows=3 class="form-control m-input" placeholder="" data-option="text"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <br />
+                                            <hr />
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-portlet__foot m-portlet__foot--fit">
+    								<div class="m-form__actions">
+    									<div class="row">
+    										<div class="col-md-4">
+    										</div>
+                                            <div class="col-md-4 text-right">
+    											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/repeater.js"></script>
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/contatos.js"></script>
