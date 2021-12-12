@@ -27,7 +27,7 @@
 
         private function saveData($file, $content){
             $this->backupToRepeatRequest = is_array($content) ? $content[1]:unserialize($content);
-            file_put_contents($file, is_array($content) ? $content[1]:($content));
+            return !!file_put_contents($file, is_array($content) ? $content[1]:($content));
         }
 
         private function like(String $needle, String $haystack, String $options = ""){
@@ -74,8 +74,13 @@
         }
 
         public function set(String $file, $key, $value=null){
-            $content = $this->get($file);
-            $file = $this->path($file);
+            if($value != "rewrite"){
+				$content = $this->get($file);
+			} else {
+				$content = [];
+			}
+
+			$file = $this->path($file);
 
             if(is_array($key)){
                 foreach($key as $keyword=>$value){
@@ -185,9 +190,9 @@
                 $content = array(crypto::crypt($content, $this->password),$content);
             }
 
-            $this->saveData($file, $content);
+            return $this->saveData($file, $content);
 
-            return $lastid;
+            // return $lastid;
         }
 
         public function query($file, String $query, $keys = "*", bool $ignoreCase = true){
@@ -308,7 +313,7 @@
                 } else {
                     $content[$id][$keys] = $value;
                 }
-                $content[$id]["@MODIFIED"] = $this->getCurrentDateTime();
+                // $content[$id]["@MODIFIED"] = $this->getCurrentDateTime();
             }
 
             $content = serialize($content);
@@ -389,5 +394,9 @@
 
             return $id;
         }
-    }
+
+		public function rewrite(String $db, $content = []){
+			$this->set($db, $content, "rewrite");
+		}
+	}
 ?>

@@ -1,0 +1,241 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+    	<div class="d-flex align-items-center">
+    		<div class="mr-auto">
+    			<h3 class="m-subheader__title">Pagina de Ajuda no Site</h3>
+    		</div>
+    		<div>
+				<div class="col text-right">
+					<button class="btn btn-outline-danger" onclick="return Go('home')"><i class="la la-arrow-left"></i>&nbsp;Voltar</button>&nbsp;&nbsp;&nbsp;
+                    <a href="/ajuda/" target=_blank class="btn btn-outline-info"><i class="la la-globe"></i>&nbsp;Visualizar no Site</a>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-info" onclick="$('#texto-rotativo').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;Salvar</button>
+                </div>
+    		</div>
+    	</div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+    		<div class="col-xl-12 col-lg-8">
+    			<div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+    				<div class="tab-content">
+    					<div class="tab-pane active" id="texto-rotativo">
+    						<div class="m-form m-form--fit m-form--label-align-right">
+    							<div class="m-portlet__body">
+									<div class="form-group m-form__group row">
+										<div class="col-10 offset-1">
+											<h3 class="m-4">Conteudo da pagina</h3>
+												<hr>
+										</div>
+									</div>
+									<div class="form-group m-form__group row">
+									  <div class="col-1"></div>
+									  <div id="gallery" class="form-group m-form__group row start mx-1 col-md-4 col-12">
+    						                <div class="col-1"></div>
+    						                <label class="col-2 col-form-label">&nbsp;</label>
+    						                <div class="col-7" style="height: 100%; background: transparent;">
+    						                    <br />
+    						                    <br />
+    						                    <br />
+    						                    <br />
+    						                    <form action="{myurl}" method="post" class="col-12" id="img_upload" style="border: 0; height: 100%; background: transparent;">
+    						                        <div class="m-dropzone" style="border: 0;">
+    						                            <div class="m-dropzone__msg dz-message needsclick" style="height: 100%; background: transparent;">
+    						                                <h3 class="m-dropzone__msg-title m-btn m-btn--pill btn-outline-info btn" style="padding: 16px; position: absolute; top: 30%; left: 10%;"><i class="la la-photo"></i> Carregar Imagem</h3>
+    						                            </div>
+    						                        </div>
+    						                    </form>
+    						                </div>
+  										<input type="hidden" class="m-input" value="" />
+    						            </div>
+									  <div class="col-6">
+										<textarea type="text" class="summernote form-control m-input" placeholder='Conteudo' data-option="text" rows=6></textarea>
+									  </div>
+									</div>
+									<div class="form-group m-form__group row mt-4 pt-4">
+										<div class="col-6 offset-3">
+												<hr>
+										</div>
+									</div>
+                                    <div class="row form-group m-form__group repeater-instance">
+										<div class="col-10 offset-1">
+											<h3 class="m-4">Tags de Ajuda</h3>
+												<hr>
+										</div>
+                                        <div data-repeater-list="" class="col-12 offset-1 row sortable">
+                                            <div data-repeater-item="" class="col-6 my-4 py-2 row ">
+												<div class="col-10">
+													<div class="input-group">
+                                                        <div style="cursor: move;" class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-arrows"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control m-input" placeholder="Titulo" data-option="text" />
+                                                    </div>
+												</div>
+												<button data-repeater-delete="delete" class="m--hide btn btn-outline-danger m-btn m-btn--icon"><i class="la la-trash"></i></button>
+												<div class="col-10 my-2">
+													<div class="input-group">
+                                                        <select type="text" data-live-search="true" class="form-control m-input m_selectpicker" data-option="text">
+
+														</select>
+                                                    </div>
+                                                    <textarea type="text" class="summernote form-control m-input" placeholder='Conteudo' data-option="text" rows=6></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <br />
+                                            <hr />
+                                            <br />
+                                        </div>
+                                        <div class="col-6 offset-3 text-center">
+                                            <div data-repeater-create="" class="btn btn-outline-success btn-sm m-btn m-btn--icon">
+                                                <span>
+                                                    <i class="la la-plus"></i>
+                                                    <span>Adicionar Opção</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-portlet__foot m-portlet__foot--fit">
+    								<div class="m-form__actions">
+    									<div class="row">
+    										<div class="col-md-4">
+    										</div>
+                                            <div class="col-md-4 text-right">
+    											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;Salvar</button>
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/repeater.js"></script>
+<script lwdk-addons>
+	LWDKExec(()=>One("#img_upload").addClass("dropzone").dropzone({
+        autoProcessQueue: true,
+        uploadMultiple: true,
+        parallelUploads: 1,
+        maxFiles: 1,
+        acceptedFiles: "image/*",
+        init: function() {
+            var myDropzone = this;
+
+			function addOptionOnCategories(opt, the=-1, init = false){
+				let sp = init?$(".m_selectpicker:not(.init)"):$(".m_selectpicker");
+				if(sp.length == 0)return;
+				sp.append('<option>'+opt+'</option>');
+				the !== -1 && $(the).find("option").eq(($(the).find("option").length-1)).prop("selected",true);
+				sp.selectpicker("refresh");
+			}
+
+			typeof initialized_ajuda == "undefined" && (window.initialized_ajuda=true) && setInterval(function () {
+				if(!/ajuda_no_site/.test(LWDKLocal)){return;}
+				$(".m_selectpicker").each(function(){
+					One(this,"act_btn").append('<option value=-1 selected disabled class="m--hide">Selecione uma categoria</option><option style="cursor: pointer!important; background-color: #FFD125!important; width: 50%; margin-left: 25%!important; margin-top: 24px!important;margin-bottom: 24px!important;" class="btn m-btn btn-warning text-center m-btn--pill d-inline-block m-4 action_add_cat" value="add">Adicionar Categoria</option>').val("-1").selectpicker("refresh");
+				});
+				$(".dropdown.bootstrap-select a.dropdown-item:not(.btn)").each(function(){
+					One(this,"del-btn").append("<button data-name='" + $(this).text() + "' class='delete_op btn px-2 py-1 m-btn m-btn--pill btn-secondary' style='position: absolute;right: 16px;top: 6px;'><i class='fa fa-trash'></i></button>");
+				});
+
+				for(c of {categories}){
+					addOptionOnCategories(c.cat, -1, true);
+				}
+
+				$(".m_selectpicker:not(.init)").addClass("init").val("-1").selectpicker("refresh");
+
+				$(".delete_op").each(function () {
+					One(this,"actd").click(function(){
+						$data = $(this).data("name");
+						Swal.fire({
+						  html: "Deseja mesmo remover essa categoria?",
+						  icon: "question",
+						  showCancelButton: true,
+						  confirmButtonText: 'Deletar',
+						  allowOutsideClick: () => !Swal.isLoading()
+						}).then((result)=>{
+							if (result.isConfirmed) {
+								$.post(LWDKLocal, {del_cat_fn: $data}, function(){
+									Swal.fire("","Categoria removida!", "info").then(()=>{
+										$(".m_selectpicker option").each(function(){
+											if(this.innerText == $data){
+												select = $(this).parent();
+												$(this).remove();
+												select.val() == "add" && select.val("-1");
+												select.selectpicker("refresh");
+											}
+										});
+									});
+								});
+							}
+						});
+					});
+				});
+				$("a.action_add_cat").each(function () {
+					One(this,"actd").click(function(){
+						var the = $(this).closest(".dropdown.bootstrap-select").find("select");
+						Swal.fire({
+						  title: 'Insira o nome da nova categoria:',
+						  input: 'text',
+						  inputAttributes: {
+						    autocapitalize: 'off'
+						  },
+						  showCancelButton: true,
+						  confirmButtonText: 'Criar',
+						  cancelButtonText: 'Cancelar',
+						  allowOutsideClick: () => !Swal.isLoading()
+						}).then((result) => {
+						  var error = () => $(the).val("-1").selectpicker("refresh");
+
+						  if (result.isConfirmed) {
+						    result.value.length > 2
+								? $.post(LWDKLocal, {add_cat_fn: result.value}, function(){
+									Swal.fire("","Categoria Adicionada!", "success").then(()=>{
+										addOptionOnCategories(result.value, the);
+									});
+								})
+								: Swal.fire("","Categoria invalida. Digite uma categoria valida", "error").then(error);
+						  }
+						  error();
+					  	});
+					});
+				});
+				$(".apagar").each(function () {
+					One(this,"actd").click(function () {
+						confirm("Deseja mesmo remover essa imagem?") &&
+							$(this)
+								.parent()
+								.parent()
+								.slideUp("slow", function () {
+									$.post(LWDKLocal, { act: "erase", file: (f = $(this).find(".img:first").data("img-url")) });
+									$(this).remove();
+								});
+					});
+				});
+			}, 500);
+
+            myDropzone.on("successmultiple", function(file, response) {
+				$.post("{myurl}", { imgs: response }, function (data) {
+					$("#gallery .img-group").remove();
+					$("#gallery").append(data);
+				});
+            });
+        },
+
+        complete: function(file){
+            this.removeFile(file);
+        }
+    }));
+</script>
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/texto-rotativo.js"></script>

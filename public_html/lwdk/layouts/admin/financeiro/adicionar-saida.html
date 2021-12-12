@@ -1,0 +1,66 @@
+<div class="panel card row" id="adc-saida">
+    <div class="card-dialog card-lg" role="document">
+        <div class="card-content">
+            <div class="card-footer text-right p-4">
+                <a type="button" class="btn btn-warning mr-4" href="/admin/financeiro_home/"> &nbsp;&lt;&nbsp; Página Principal</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a type="button" class="btn btn-info mr-4" href="/admin/financeiro_alterar/"> &nbsp;(?)&nbsp; Ajuda</a>
+            </div>
+            <div class="card-header p-4">
+                <h2 class="card-title pl-4">ADICIONAR SA&Iacute;DA</h2>
+                <!-- <span type="button" style="cursor: pointer;" data-dismiss="card" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </span> -->
+            </div>
+            <div class="card-body row add-form col-md-8 offset-md-2">
+                <input type="hidden" data-name="sect" value="saida" />
+				<div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Titulo da saída:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="nome" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Data:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="date" data-name="data" class="form-control m-input prod" placeholder="" value="{data}" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Valor:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="valor" class="form-control m-input prod money" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+					<div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Repete?</label>
+                        <div class="input-group">
+                            <select data-name="fator" class="form-control prod" placeholder="" data-option="text">
+                                <option value="n">Nunca</option>
+                                <option value="+7 days">A cada 07 dias</option>
+                                <option value="+15 days">A cada 15 dias</option>
+                                <option value="+1 months">A cada 01 m&ecirc;s</option>
+                                <option value="+2 months">A cada 02 meses</option>
+                                <option value="+3 months">A cada 03 meses</option>
+                                <option value="+6 months">A cada 06 meses</option>
+                                <option value="+1 year">A cada ano</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-4">
+                        <label style="font-weight: bold; text-transform: uppercase;">Observações:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="obs" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-right p-4">
+				<button type="button" class="m-4 btn btn-success submit btn-lg">Adicionar Sa&iacute;da</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons src="/js/admin/forms/financeiro-2.js" lwdk-vars="on"></script>

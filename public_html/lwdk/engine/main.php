@@ -7,6 +7,13 @@
     ini_set('display_startup_errors', 0);
     date_default_timezone_set('America/Sao_Paulo');
 
+	function mb_ucfirst($string, $encoding="utf8")
+{
+    $firstChar = mb_substr($string, 0, 1, $encoding);
+    $then = mb_substr($string, 1, null, $encoding);
+    return mb_strtoupper($firstChar, $encoding) . $then;
+}
+
     foreach(glob("lwdk/engine/classes/*.php") as $file){
         require_once $file;
     }

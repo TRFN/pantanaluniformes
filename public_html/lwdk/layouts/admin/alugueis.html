@@ -1,0 +1,264 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title ">{TITLE}</h3>
+            </div>
+            <div>
+                <div class="col text-right">
+                    <button class="btn btn-outline-danger" onclick="return Go('alugueis/listar')"><i class="la la-arrow-left"></i><span class="d-none d-md-inline">&nbsp;Voltar</span></button>&nbsp;&nbsp;&nbsp;
+					<button class="btn btn-outline-success" onclick="$('#dados_aluguel').find('.submit:first')[0].click(); setTimeout(()=>imprimir_contrato('{id}'), 2000);"><i class="la la-print"></i><span class="d-none d-md-inline">&nbsp;Imprimir</span></button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-info" onclick="$('#dados_aluguel').find('.submit:first')[0].click();"><i class="la la-save"></i><span class="d-none d-md-inline">&nbsp;{botao-txt}</span></button>
+                </div>
+    		</div>
+        </div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-8">
+                <div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="dados_aluguel">
+                            <div class="m-portlet__body">
+								<div class="p-0 m-0">
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+											<input type="hidden" data-name="id" value="{id}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Nome</label>
+									    <div class="col-md-3 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="nome" value="{nome}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">CPF/CNPJ</label>
+									    <div class="col-md-2 col-12 mb-3">
+									        <input class="form-control m-input cpfcnpj" type="text" data-name="doc" value="{doc}" />
+									    </div>
+										<label class="col-md-1 col-12  col-form-label">Identidade</label>
+									    <div class="col-md-2 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="rg" value="{rg}" />
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Telefone</label>
+									    <div class="col-md-2 col-12 mb-3">
+									        <input class="form-control m-input tel" type="text" data-name="tel" value="{tel}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Celular</label>
+									    <div class="col-md-2 col-12 mb-3">
+									        <input class="form-control m-input tel" type="text" data-name="cel" value="{cel}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Email</label>
+									    <div class="col-md-3 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="email" value="{email}" />
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Nome Referência</label>
+									    <div class="col-md-2 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="ref_nome" value="{ref_nome}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Tel. Referência</label>
+									    <div class="col-md-2 col-12 mb-3">
+									        <input class="form-control m-input tel" type="text" data-name="ref_tel" value="{ref_tel}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Cel. Referência</label>
+									    <div class="col-md-3 col-12 mb-3">
+									        <input class="form-control m-input tel" type="text" data-name="ref_cel" value="{ref_cel}" />
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12 col-form-label">CEP</label>
+									    <div class="col-md-2 col-12 mb-3">
+									        <input onchange="buscar_cep(this)" class="form-control m-input cep" type="text" value="" />
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Rua</label>
+									    <div class="col-md-5 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="rua" value="{rua}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Numero</label>
+									    <div class="col-md-3 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="numero" value="{numero}" />
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Adicional</label>
+									    <div class="col-md-5 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="complemento" value="{complemento}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Bairro</label>
+									    <div class="col-md-3 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="bairro" value="{bairro}" />
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Cidade</label>
+									    <div class="col-md-5 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="cidade" value="{cidade}" />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Estado</label>
+									    <div class="col-md-1 col-12 mb-3">
+									        <input class="form-control m-input" type="text" data-name="estado" value="{estado}" />
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Status</label>
+									    <div class="col-md-3 col-12 mb-3">
+									        <select class="form-control m-input" type="text" data-name="status" data-value="{status}">
+												<option>Pendente</option>
+												<option>Baixado</option>
+											</select>
+									    </div>
+									</div>
+									<div class="form-group m-form__group row">
+									    <div class="col-1">
+									        <br />
+									    </div>
+									    <label class="col-md-1 col-12  col-form-label">Observações</label>
+									    <div class="col-md-9 col-12 mb-3">
+									        <textarea class="form-control m-input summernote" type="text" data-name="observacoes" />
+									    </div>
+									</div>
+
+								</div>
+								<div class="form-group m-form__group row">
+									<div class="col-md-2 col-0">
+										<br />
+									</div>
+									<div class="card-body form-group col-12 mb-3 col-md-8">
+		                                <h3 class="font-weight-semi-bold pt-3">Produtos para Aluguel</h3>
+		                                <div class="row justify-content-center">
+		                                    <div class="form-wrapper repeater-instance" data-max-repeat="6" data-max-repeat-msg="Limite de itens para contrato de aluguel excedido!">
+		                                        <p class="text-left">Administre e gerencie os <strong>produtos</strong> para aluguel.<br><b style="float: right">Limite: 06 produtos</b><br><br></p>
+		                                        <div data-repeater-list="">
+		                                            <div data-repeater-item="" class="produto-aluguel row my-3 p-1 mb-1 content-align-justify">
+		                                                <div class="form-group col-12 mb-3 row p-0 m-0">
+		                                                    <div class="col-md-4 col-12 mb-3">
+		                                                        <label>
+		                                                            <strong>Produto <span class="index">1</span></strong>
+		                                                        </label>
+		                                                    </div>
+		                                                    <div class="col-md-8 col-12 mb-3" style="text-align: right;">
+		                                                        <button data-repeater-delete="" class="btn btn-outline btn-danger mb-2">REMOVER</button>
+		                                                    </div>
+		                                                </div>
+														<div class="form-group col-12 mb-3 row p-0 m-0">
+															<div class="col-lg-9 col-md-10 col-12 mb-3 p-4 mb-3">
+															    <label>Preencher Automaticamente</label>
+															    <div class="input-group">
+							                                        <select class="form-control m-bootstrap-select  m_selectpicker" data-live-search="true" onchange="listar_produto(this)">
+							                                            <option disabled selected class="m--hide">Selecione um produto para carregar automaticamente</option>
+							                                            {produtos-aluguel}
+							                                        </select>
+															    </div>
+															</div>
+														</div>
+														<div class="form-group col-12 mb-3 row p-0 m-0">
+															<div class="col-lg-8 col-md-8 col-sm-12 p-4 mb-3">
+															    <label>Nome do Produto:</label>
+															    <div class="input-group">
+															        <input type="text" data-name="nome" class="form-control m-input prod" placeholder="" data-option="text" />
+															    </div>
+															</div>
+															<div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+															    <label>Patrimonio:</label>
+															    <div class="input-group">
+															        <input type="text" data-name="patrimonio" class="form-control m-input prod" placeholder="" data-option="text" />
+															    </div>
+															</div>
+															<div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+															    <label>Data de Devoluc&atilde;o:</label>
+															    <div class="input-group">
+															        <input type="date" data-name="devolucao" class="form-control m-input prod" placeholder="" data-option="text" />
+															    </div>
+															</div>
+															<div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+															    <label>Valor do produto:</label>
+															    <div class="input-group">
+															        <input type="text" data-name="valor" class="form-control m-input prod" placeholder="" data-option="text" />
+															    </div>
+															</div>
+															<div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+															    <label>Valor caso haja Dano:</label>
+															    <div class="input-group">
+															        <input type="text" data-name="dano" class="form-control m-input prod" placeholder="" data-option="text" />
+															    </div>
+															</div>
+															<div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3">
+															    <label>Valor de Transporte:</label>
+															    <div class="input-group">
+															        <input type="text" data-name="transporte" class="form-control m-input prod" placeholder="" data-option="text" />
+															    </div>
+															</div>
+														</div>
+		                                            </div>
+		                                        </div>
+		                                        <div class="text-center">
+		                                            <hr />
+		                                            <br />
+		                                            <br />
+		                                            <button
+		                                                class="btn btn-dark btn-modern text-uppercase border-radius-2 font-weight-bold text-3 py-3"
+		                                                data-repeater-create=""
+		                                                onmouseenter="$(this).css({backgroundColor: '#000'});"
+		                                                onmouseleave="$(this).css({backgroundColor: '#566'});"
+		                                                style="position: absolute; right: 10px; background-color: #566; padding: 12px 16px; bottom: 10px; transition: background-color 150ms ease-in;"
+		                                            >
+		                                                Adicionar outro produto para aluguel
+		                                            </button>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+								</div>
+                            </div>
+                            <div class="m-portlet__foot m-portlet__foot--fit">
+								<div class="m-form__actions">
+									<div class="row">
+                                        <div class="col-12 mb-3"><br>
+										</div>
+                                        <div class="col-md-4 col-8">
+										</div>
+                                        <div class="col-md-4 col text-right px-4">
+											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+										</div>
+                                            <div class="col-12 mb-3"><br>
+    										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/alugueis.js"></script>
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/repeater.js"></script>

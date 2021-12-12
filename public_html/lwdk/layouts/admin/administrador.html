@@ -7,8 +7,8 @@
             </div>
             <div>
                 <div class="col text-right">
-                    <button class="btn btn-outline-danger" onclick="history.back();"><i class="la la-arrow-left"></i>&nbsp;Voltar</button>&nbsp;&nbsp;&nbsp;
-                    <button class="btn btn-info" onclick="$('.m-content').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+                    <button class="btn btn-outline-danger" onclick="history.back();"><i class="la la-arrow-left"></i><span class="d-none d-md-inline">&nbsp;Voltar</span></button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-info" onclick="$('.m-content').find('.submit:first')[0].click();"><i class="la la-save"></i><span class="d-none d-md-inline">&nbsp;{botao-txt}</span></button>
                 </div>
     		</div>
         </div>
@@ -22,31 +22,31 @@
                         <div class="tab-pane active" id="form_submit">
                             <div class="m-portlet__body">
                                 <div class="form-group m-form__group row">
-                                    <div class="col-{size_l}">
+                                    <div class="col-12 col-md-{size_l}">
                                         <input data-name="id"type="hidden"value="{id}"/>
                                     </div>
-                                    <label class="col-2 col-form-label">Nome de Usu&aacute;rio</label>
-                                    <div class="col-{size_r}">
+                                    <label class="col-md-2 col-12 col-form-label">Nome de Usu&aacute;rio</label>
+                                    <div class="col-12 col-md-{size_r}">
                                         <input class="form-control m-input" style="text-transform: capitalize;" type="text" data-name="nome" value="{nome}">
                                     </div>
                                 </div>
 
                                 <div class="form-group m-form__group row">
-                                    <div class="col-{size_l}">
+                                    <div class="col-12 col-md-{size_l}">
                                         &nbsp;
                                     </div>
-                                    <label class="col-2 col-form-label">Email</label>
-                                    <div class="col-{size_r}">
+                                    <label class="col-md-2 col-12 col-form-label">Email</label>
+                                    <div class="col-12 col-md-{size_r}">
                                         <input class="form-control m-input" type="text" data-name="email" value="{email}">
                                     </div>
                                 </div>
 
                                 <div class="form-group m-form__group row">
-                                    <div class="col-{size_l}">
+                                    <div class="col-12 col-md-{size_l}">
                                         &nbsp;
                                     </div>
-                                    <label class="col-2 col-form-label">Senha</label>
-                                    <div class="col-{size_r}">
+                                    <label class="col-md-2 col-12 col-form-label">Senha</label>
+                                    <div class="col-12 col-md-{size_r}">
                                         <input class="form-control m-input" type="password" data-name="senha" value="" placeholder="*****">
                                     </div>
                                 </div>

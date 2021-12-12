@@ -101,6 +101,7 @@ var SnippetLogin = function() {
                 	setTimeout(function() {
 	                    btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false);
                         if(response !== "on"){
+							// console.log(response);
 	                        showErrorMsg(form, 'danger', 'Usuario ou senha invalidos!');
                         } else {
                             window.top.location.href = returnURL.length < 1 ? "/admin/" : returnURL;

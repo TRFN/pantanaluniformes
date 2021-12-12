@@ -1,0 +1,84 @@
+<div class="m-subheader ">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title" style="font-size: 36px;">{TITLE}</h3>
+			<!-- <span class="d-md-none d-block">{area}</span> -->
+        </div>
+        <div>
+        </div>
+    </div>
+</div>
+<div class="m-content">
+    <div class="row">
+		<span class="col-12 d-md-none d-block"><br></span>
+        <div class="col-lg-12 col-sm-10 col-sm-offset-1 col-lg-offset-0">
+            <div class="card">
+				<div class="card-body text-left text-start">
+					<a href="/admin/financeiro_gerar_relatorio?data-inicio={30dias}&data-final={hoje}&loja-virtual=1&entrada=0&saida=0" class="btn btn-sm badge btn-success ml-1 p-3" style="font-size: 14px;" target="_blank"><i class='  la-2x  la la-file-excel-o' style="transform: scale(2)"></i>&nbsp;&nbsp;&nbsp;{texto-exportar-excel}</a>
+				</div>
+				<div class="card-body text-end text-right">
+					<div class="d-inline-block mx-2"><b>Filtros:</b>&nbsp;</div>
+					<a href="/admin/vendas/?filtro=retroativo|0|Days" class="btn btn-sm badge btn-info ml-1 py-2 px-1 my-2" style="font-size: 12px;">Hoje</a>
+					<a href="/admin/vendas/?filtro=retroativo|1|Day" class="btn btn-sm badge btn-info ml-1 py-2 px-1 my-2" style="font-size: 12px;">Ontem</a>
+					<a href="/admin/vendas/?filtro=retroativo|7|Days" class="btn btn-sm badge btn-success ml-2 py-2 px-1 my-2" style="font-size: 12px;">07 Dias</a>
+					<a href="/admin/vendas/?filtro=retroativo|15|Days" class="btn btn-sm badge btn-success ml-1 py-2 px-1 my-2" style="font-size: 12px;">15 dias</a>
+					<a href="/admin/vendas/?filtro=retroativo|1|Month" class="btn btn-sm badge btn-dark ml-2 py-2 px-1 my-2" style="font-size: 12px;">Último Mês</a>
+					<a href="/admin/vendas/?filtro=retroativo|3|Months" class="btn btn-sm badge btn-dark ml-1 py-2 px-1 my-2" style="font-size: 12px;">03 Meses</a>
+					<a href="/admin/vendas/?filtro=retroativo|6|Months" class="btn btn-sm badge btn-dark ml-1 py-2 px-1 my-2" style="font-size: 12px;">06 Meses</a>
+					<a href="/admin/vendas/?filtro=retroativo|1|Year" class="btn btn-sm badge btn-primary ml-2 py-2 px-1 my-2" style="font-size: 12px;">Último Ano</a>
+					<a href="javascript:;" onclick="return faixa_de_datas();" class="btn btn-sm badge btn-warning ml-2 py-2 px-1 my-2" style="font-size: 12px;">Personalizado</a>
+				</div>
+				<div class="card-body">{filtro_aplicado}</div>
+                <div class="card-body">
+                    <table id="tabela-principal" class="table table-bordered text-center" width="100%">
+                         <thead><tr>{thead}</tr></thead>
+                         <tbody>{tbody}</tbody>
+                         <tfoot><tr>{thead}</tr></tfoot>
+                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	function faixa_de_datas(){
+		return swal.fire({
+		  title: 'Selecione um intervalo de datas',
+		  html:
+		    '<label><b>Data Inicial:<' + '/b><input value="{30dias}" id="swal-input1" type="date" class="swal2-input" ' + '/><' + '/label>' +
+		    '<label><b>Data Final:<' + '/b><input value="{hoje}" id="swal-input2" type="date" class="swal2-input" /><' + '/label>',
+		  preConfirm: function () {
+		    return new Promise(function (resolve) {
+		      resolve([
+		        $('#swal-input1').val(),
+		        $('#swal-input2').val()
+			])
+		    })
+		  },
+		  didOpen: function () {
+		    $('#swal-input1').focus()
+		  }
+		}).then(function (result) {
+		  if(result.isConfirmed){
+			  location.href='/admin/vendas/?filtro=intervalo|' + result.value.join("|");
+		  }
+		}).catch(swal.noop)
+	}
+
+	LWDKExec(() => {
+		$.post("/admin/ajax_status_vendas/", function(data){
+			$(".status-pagseguro").each(function(){
+				let id = $(this).data("id");
+				console.log(data[id]);
+				if(typeof data[id] != 'undefined'){
+					$(this).html(data[id][0]);
+					$(this).css({backgroundColor: data[id][1]});
+				} else {
+					$(this).html("N\u00e3o Conclu\u00eddo");
+					$(this).css({backgroundColor: "#ab0000"});
+				}
+			});
+		});
+	});
+</script>

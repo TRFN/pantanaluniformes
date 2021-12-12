@@ -3,118 +3,189 @@
     <!-- BEGIN: Aside Menu -->
     <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " m-menu-vertical="1" m-menu-scrollable="1" m-menu-dropdown-timeout="500" style="position: relative;">
         <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
-            <!-- <li class="m-menu__item" aria-haspopup="true">
-                <a class="m-menu__link" ajax=on href="/produtos/listar/">
-                    <i class="m-menu__link-icon flaticon-layer"></i>
-                    <span class="m-menu__link-title">
-                        <span class="m-menu__link-wrap">
-                            <span class="m-menu__link-text">
-                                PÁGINAS
-                            </span>
-                        </span>
-                    </span>
-                </a>
-            </li> -->
+			<li class="m-menu__item d-none d-md-block" aria-haspopup="true">
+				<a class="m-menu__link" ajax=on href="/vendas/">
+					<i class="m-menu__link-icon flaticon-list"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text" style="text-transform: uppercase;">
+								VENDAS
+							</span>
+						</span>
+					</span>
+				</a>
+			</li>
 			<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
-				<a href="javascript:;" class="m-menu__link m-menu__toggle">
-					<i class="m-menu__link-icon flaticon-layer"></i>
-					<span class="m-menu__link-text">GERIR PÁGINAS</span></a>
+                <a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-bag"></i><span class="m-menu__link-text" style="text-transform: uppercase;">PRODUTOS</span><i
+                     class="m-menu__ver-arrow la la-angle-right"></i></a>
                 <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
                     <ul class="m-menu__subnav">
-                        <li class="m-menu__item " aria-haspopup="true"><a href="/paginas/listar/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAGS. PERSONALIZADAS</span></a></li>
-						<li class="m-menu__item " aria-haspopup="true"><hr></li>
-						<li class="m-menu__item " aria-haspopup="true"><a href="/pag_missas/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. MISSAS</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/pag_fotos/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. FOTOS</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/pag_videos/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. VÍDEOS</span></a></li>
-
-						<!-- <li class="m-menu__item " aria-haspopup="true"><a href="/pag_novo_templo/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. NOVO TEMPLO</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/pag_doacoes/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. DOAÇÕES</span></a></li> -->
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/pag_oracoes/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. ORAÇÕES</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/pag_vela_virtual/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. VELA VIRTUAL</span></a></li>
-						<li class="m-menu__item " aria-haspopup="true"><hr></li>
-
-                        <!-- <li class="m-menu__item " aria-haspopup="true"><a href="/capa/detalhe-veiculo/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG VE&Iacute;CULO</span></a></li> -->
+						<li class="m-menu__item " aria-haspopup="true"><a href="/produto/listar/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">PRODUTOS</span></a></li>
+                        <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/nfs_upload/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">adicionar PRODUTOS NFe</span></a></li>
+                        <li class="m-menu__item " aria-haspopup="true"><a href="/categorias/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">CATEGORIAS</span></a></li>
+                        <li class="m-menu__item " aria-haspopup="true"><a href="/sub_categorias/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">SUB-CATEGORIAS</span></a></li>
                     </ul>
                 </div>
             </li>
-            <li class="m-menu__item" aria-haspopup="true">
+			<li class="m-menu__item d-none d-md-block" aria-haspopup="true">
+				<a class="m-menu__link" ajax=on href="/alugueis/listar/">
+					<i class="m-menu__link-icon flaticon-list"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text" style="text-transform: uppercase;">
+								ALUGUEIS
+							</span>
+						</span>
+					</span>
+				</a>
+			</li>
+			<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+                <a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-piggy-bank"></i><span class="m-menu__link-text" style="text-transform: uppercase;">FINANCEIRO</span><i
+                     class="m-menu__ver-arrow la la-angle-right"></i></a>
+                <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+						<li class="m-menu__item " aria-haspopup="true"><a href="/financeiro_home/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">fluxo de caixa</span></a></li>
+                        <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/financeiro_adicionar_entrada/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">criar ENTRADA</span></a></li>
+
+
+                        <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/financeiro_adicionar_saida/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">criar SAÍDA</span></a></li>
+
+<!--
+                        <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/financeiro_adicionar_gasto_fixo/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">adicionar GASTO FIXO</span></a></li>
+
+
+                        <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/financeiro_adicionar_entrada_fixa/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">adicionar ent. fixa</span></a></li>
+
+
+                        <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/financeiro_adicionar_saida_futura/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">adc. saída futura</span></a></li> -->
+
+
+                        <!-- <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/financeiro_exportar/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">EXPORTAR DADOS</span></a></li> -->
+
+
+                        <!-- <li class="m-menu__item d-none d-md-block" aria-haspopup="true"><a href="/financeiro_adicionar_entrada/" ajax=on  class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">adicionar ENTRADA</span></a></li> -->
+                    </ul>
+                </div>
+            </li>
+			<!-- <li class="m-menu__item d-none d-md-block" aria-haspopup="true">
+				<a class="m-menu__link" ajax=on href="/financeiro/listar/">
+					<i class="m-menu__link-icon flaticon-piggy-bank"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text" style="text-transform: uppercase;">
+								FINANCEIRO
+							</span>
+						</span>
+					</span>
+				</a>
+			</li> -->
+			<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+				<a href="javascript:;" class="m-menu__link m-menu__toggle">
+					<i class="m-menu__link-icon flaticon-presentation-1"></i>
+					<span class="m-menu__link-text" style="text-transform: uppercase;">PÁGINAS</span><i
+	                     class="m-menu__ver-arrow la la-angle-right"></i>
+				</a>
+                <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+						<li class="m-menu__item " aria-haspopup="true"><a href="/textos/aluguel/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">Aluguel</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true"><a href="/textos/politica-de-privacidade/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">Politica/Privacidade</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true"><a href="/textos/trocas-e-devolucoes/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">Trocas e Devoluções</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true"><a href="/textos/garantia-dos-produtos/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">Garantia</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true"><a href="/conteudo/compra/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">Compra de Usados</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true"><a href="/conteudo/reforma/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">Reforma</span></a></li>
+						<li class="m-menu__item " aria-haspopup="true"><a href="/conteudo/a-empresa/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">A Empresa</span></a></li>
+                    </ul>
+                </div>
+            </li>
+			<li class="m-menu__item" aria-haspopup="true">
+				<a class="m-menu__link" ajax=on href="/cupons/">
+					<i class="m-menu__link-icon flaticon-bag"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text" style="text-transform: uppercase;">
+								CUPONS
+							</span>
+						</span>
+					</span>
+				</a>
+			</li>
+			<li class="m-menu__item" aria-haspopup="true">
                 <a class="m-menu__link" ajax=on href="/config_menu/">
-                    <i class="m-menu__link-icon flaticon-list"></i>
+                    <i class="m-menu__link-icon flaticon-dashboard"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
-                            <span class="m-menu__link-text">
+                            <span class="m-menu__link-text" style="text-transform: uppercase;">
                                 CONFIG. MENU
                             </span>
                         </span>
                     </span>
                 </a>
             </li>
-            <li class="m-menu__item" aria-haspopup="true">
+			<!-- <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+				<a href="javascript:;" class="m-menu__link m-menu__toggle">
+					<i class="m-menu__link-icon flaticon-list"></i>
+					<span class="m-menu__link-text" style="text-transform: uppercase;">TEXTOS</span>
+				</a>
+                <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+                        <li class="m-menu__item " aria-haspopup="true"><a href="/textos/rodape" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text" style="text-transform: uppercase;">TEXTO RODAPÉ</span></a></li>
+                    </ul>
+                </div>
+            </li> -->
+			<li class="m-menu__item" aria-haspopup="true">
                 <a class="m-menu__link" ajax=on href="/contatos/">
                     <i class="m-menu__link-icon flaticon-network"></i>
                     <span class="m-menu__link-title">
                         <span class="m-menu__link-wrap">
-                            <span class="m-menu__link-text">
-                                SOCIAL E MIDIAS
+                            <span class="m-menu__link-text" style="text-transform: uppercase;">
+                                SOCIAL
+                            </span>
+                        </span>
+                    </span>
+                </a>
+            </li>
+
+			<li class="m-menu__item" aria-haspopup="true">
+                <a class="m-menu__link" ajax=on href="/email_marketing/">
+                    <i class="m-menu__link-icon flaticon-envelope"></i>
+                    <span class="m-menu__link-title">
+                        <span class="m-menu__link-wrap">
+                            <span class="m-menu__link-text" style="text-transform: uppercase;">
+                                EMAIL MARKETING
                             </span>
                         </span>
                     </span>
                 </a>
             </li>
 			<li class="m-menu__item" aria-haspopup="true">
-                <a class="m-menu__link" ajax=on href="/logotipo/">
-                    <i class="m-menu__link-icon flaticon-file"></i>
-                    <span class="m-menu__link-title">
-                        <span class="m-menu__link-wrap">
-                            <span class="m-menu__link-text">
-                                LOGOTIPO
-                            </span>
-                        </span>
-                    </span>
-                </a>
-            </li>
-			<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
-				<a href="javascript:;" class="m-menu__link m-menu__toggle">
-					<i class="m-menu__link-icon flaticon-presentation-1"></i>
-					<span class="m-menu__link-text">IMAGENS CAPA</span></a>
-                <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
-                    <ul class="m-menu__subnav">
-                        <li class="m-menu__item " aria-haspopup="true"><a href="/capa/home/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. HOME</span></a></li>
-
-                        <!-- <li class="m-menu__item " aria-haspopup="true"><a href="/capa/nosso-estoque/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. ESTOQUE</span></a></li>
-
-                        <li class="m-menu__item " aria-haspopup="true"><a href="/capa/a-empresa/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. EMPRESA</span></a></li> -->
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/capa/doacoes/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. DOAÇÕES</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/capa/missas/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. MISSAS</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/capa/fotos/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. FOTOS</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/capa/videos/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. VÍDEOS</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/capa/novo-templo/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. NOVO TEMPLO</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/capa/oracoes/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. ORAÇÕES</span></a></li>
-
-						<li class="m-menu__item " aria-haspopup="true"><a href="/capa/vela-virtual/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. VELA VIRTUAL</span></a></li>
-
-                        <li class="m-menu__item " aria-haspopup="true"><a href="/capa/como-chegar/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG. COMO CHEGAR</span></a></li>
-
-                        <li class="m-menu__item " aria-haspopup="true"><a href="/capa/fale-conosco/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG FALE CONOSCO</span></a></li>
-
-                        <!-- <li class="m-menu__item " aria-haspopup="true"><a href="/capa/detalhe-veiculo/" ajax=on class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">PAG VE&Iacute;CULO</span></a></li> -->
-                    </ul>
-                </div>
-            </li>
+				<a class="m-menu__link" ajax=on href="/logotipo/">
+					<i class="m-menu__link-icon flaticon-file"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text" style="text-transform: uppercase;">
+								LOGOTIPO
+							</span>
+						</span>
+					</span>
+				</a>
+			</li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
-                <a href="/administradores/listar/" ajax=on class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-user"></i><span class="m-menu__link-text">USU&Aacute;RIOS</span></a>
+                <a href="/administradores/listar/" ajax=on class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-user"></i><span class="m-menu__link-text" style="text-transform: uppercase;">USU&Aacute;RIOS</span></a>
             </li>
+
+			<li class="m-menu__item d-none d-md-block" aria-haspopup="true">
+				<a class="m-menu__link" ajax=on href="/acoes/">
+					<i class="m-menu__link-icon flaticon-alert"></i>
+					<span class="m-menu__link-title">
+						<span class="m-menu__link-wrap">
+							<span class="m-menu__link-text" style="text-transform: uppercase;">
+								Log de Ações
+							</span>
+						</span>
+					</span>
+				</a>
+			</li>
+			<!-- <li style="cursor: pointer;" title="Acessar Pagar.me" onclick="window.open('https://id.pagar.me/');"><svg width="140" height="45" viewBox="0 0 170 45" fill="none" style="position: absolute;left: 25%;"><mask id="logo-live_svg__a" maskUnits="userSpaceOnUse" x="140" y="0" width="30" height="31"><path fill-rule="evenodd" clip-rule="evenodd" d="M140.741 0H170v30.378h-29.259V0z" fill="#fff"></path></mask><g mask="url(#logo-live_svg__a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M160.305 30.378h9.665c.016-.394.03-.788.03-1.187C170 13.106 156.877.02 140.741 0v9.622c10.828.007 19.604 8.776 19.604 19.57 0 .398-.017.793-.04 1.186z" fill="#65A300"></path></g><mask id="logo-live_svg__b" maskUnits="userSpaceOnUse" x="0" y="19" width="19" height="26"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 19.825h18.586v24.79H0v-24.79z" fill="#fff"></path></mask><g mask="url(#logo-live_svg__b)"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.263 24.744c-.995-1.108-2.312-1.663-3.953-1.663-1.686 0-3.045.549-4.075 1.646-1.03 1.097-1.546 2.52-1.546 4.272 0 1.82.515 3.256 1.546 4.306 1.03 1.05 2.424 1.576 4.18 1.576 1.64 0 2.94-.543 3.9-1.628.962-1.085 1.442-2.492 1.442-4.219 0-1.751-.498-3.18-1.494-4.29zM0 20.174h3.794v2.347c.047-.07.123-.169.229-.298.105-.128.34-.344.702-.647a7.134 7.134 0 011.195-.806c.433-.233 1.02-.449 1.757-.647a8.819 8.819 0 012.301-.298c2.53 0 4.597.834 6.202 2.503 1.604 1.67 2.406 3.87 2.406 6.6 0 2.872-.802 5.124-2.406 6.758-1.605 1.635-3.72 2.451-6.342 2.451a8.749 8.749 0 01-2.25-.28c-.702-.187-1.276-.414-1.72-.683a11.64 11.64 0 01-1.16-.787c-.328-.257-.562-.479-.703-.666l-.21-.28v9.174H0v-24.44z" fill="#fff"></path></g><path fill-rule="evenodd" clip-rule="evenodd" d="M26.364 33.236c.996 1.097 2.313 1.645 3.952 1.645 1.734 0 3.11-.525 4.13-1.575 1.018-1.051 1.527-2.486 1.527-4.307 0-1.75-.527-3.163-1.58-4.237-1.055-1.074-2.425-1.61-4.111-1.61-1.663 0-2.981.536-3.953 1.61s-1.458 2.486-1.458 4.237c0 1.727.498 3.14 1.493 4.237zm13.298 4.621h-3.794v-2.416c-.047.07-.117.17-.21.298-.095.129-.317.344-.668.648a7.15 7.15 0 01-1.142.805c-.41.234-.972.45-1.687.648a8.422 8.422 0 01-2.266.297c-2.577 0-4.69-.781-6.342-2.346-1.65-1.563-2.476-3.804-2.476-6.722 0-2.755.843-4.972 2.53-6.653 1.686-1.68 3.758-2.521 6.218-2.521 1.265 0 2.4.216 3.408.648 1.007.431 1.698.858 2.073 1.278l.562.63V20.21h3.794v17.647zM47.44 33.008c.996 1.062 2.313 1.593 3.953 1.593 1.71 0 3.08-.52 4.111-1.558 1.03-1.039 1.546-2.422 1.546-4.15 0-1.703-.527-3.086-1.581-4.149-1.054-1.062-2.425-1.592-4.11-1.592-1.664 0-2.981.53-3.954 1.592-.971 1.063-1.458 2.446-1.458 4.15 0 1.68.498 3.052 1.494 4.114zm13.3 3.064c0 5.952-3.023 8.928-9.066 8.928-.96 0-1.892-.104-2.793-.315-.902-.21-1.657-.455-2.266-.735-.61-.28-1.148-.566-1.616-.858-.469-.292-.82-.542-1.054-.753l-.316-.315 1.897-2.801.264.263c.105.105.35.297.737.577.387.28.797.531 1.23.753.433.222.99.42 1.669.595a8.25 8.25 0 002.073.263c1.92 0 3.308-.426 4.163-1.278.855-.852 1.282-2.083 1.282-3.694v-1.506c-.047.07-.117.163-.21.28-.094.117-.317.333-.668.648a6.615 6.615 0 01-1.142.822c-.41.234-.972.444-1.686.631a8.94 8.94 0 01-2.266.28c-2.577 0-4.69-.77-6.342-2.31-1.652-1.54-2.477-3.747-2.477-6.619 0-2.683.843-4.86 2.53-6.53 1.686-1.668 3.76-2.503 6.218-2.503 1.265 0 2.401.216 3.408.648 1.008.431 1.699.858 2.073 1.278l.562.63v-2.276h3.795v15.897zM68.546 33.2c.996 1.098 2.313 1.646 3.953 1.646 1.733 0 3.109-.525 4.128-1.575 1.019-1.051 1.528-2.486 1.528-4.307 0-1.75-.527-3.163-1.58-4.237-1.055-1.074-2.425-1.61-4.111-1.61-1.664 0-2.98.536-3.953 1.61-.972 1.074-1.458 2.486-1.458 4.237 0 1.727.498 3.14 1.493 4.236zm13.299 4.622H78.05v-2.416c-.047.07-.118.17-.211.298-.094.129-.317.344-.668.648a7.15 7.15 0 01-1.142.805c-.41.234-.972.449-1.687.648a8.424 8.424 0 01-2.266.297c-2.576 0-4.69-.781-6.341-2.345-1.652-1.564-2.478-3.805-2.478-6.723 0-2.755.844-4.972 2.53-6.653 1.687-1.68 3.76-2.521 6.219-2.521 1.265 0 2.4.216 3.408.648 1.008.432 1.698.858 2.073 1.278l.563.63v-2.241h3.794v17.647zM93.65 23.956c-1.57-.14-2.8.24-3.69 1.138-.89.899-1.335 2.13-1.335 3.694v9.034H84.83V20.14h3.794v3.186c.024-.093.076-.221.158-.385.082-.163.27-.455.562-.875.293-.42.62-.782.984-1.086.363-.303.872-.577 1.529-.823a5.06 5.06 0 012.108-.297l-.317 4.096zM95.27 32.78c.632-.607 1.404-.91 2.318-.91.913 0 1.686.303 2.319.91.632.607.948 1.354.948 2.241s-.316 1.634-.948 2.241c-.633.607-1.406.91-2.32.91-.913 0-1.686-.303-2.318-.91-.632-.607-.949-1.354-.949-2.24 0-.888.317-1.635.95-2.242zM104.245 19.825h5.341v2.346c.046-.07.105-.163.175-.28.07-.117.24-.327.51-.63.269-.304.567-.573.896-.806.328-.234.772-.444 1.335-.63a5.655 5.655 0 011.792-.28c.656 0 1.253.087 1.791.262.54.175.967.385 1.283.63.316.246.579.485.79.718.211.234.364.444.457.631l.105.245c.047-.07.112-.158.193-.262.083-.106.276-.304.581-.596.304-.292.632-.548.983-.77.351-.222.82-.42 1.405-.596a6.36 6.36 0 011.828-.262c3.795 0 5.692 2.182 5.692 6.548v11.73h-5.341v-11.03c0-1.844-.679-2.767-2.038-2.767-1.686 0-2.529 1.226-2.529 3.677v10.12h-5.341v-11.03c0-1.844-.68-2.767-2.037-2.767-1.687 0-2.53 1.226-2.53 3.677v10.12h-5.341V19.825zM145.137 26.933a6.091 6.091 0 01-.07-.333c-.023-.128-.123-.373-.298-.735a3.662 3.662 0 00-.651-.945c-.257-.269-.632-.514-1.124-.736-.492-.221-1.054-.332-1.686-.332-.633 0-1.195.105-1.687.315-.491.21-.867.467-1.124.77a5.335 5.335 0 00-.632.91c-.165.304-.258.56-.282.77l-.07.316h7.624zm4.638 8.089c-.07.093-.17.21-.298.35-.13.14-.434.39-.914.752-.48.362-.995.683-1.546.963-.55.28-1.282.531-2.196.753-.914.222-1.874.332-2.881.332-3.209 0-5.685-.834-7.431-2.503-1.745-1.67-2.617-3.962-2.617-6.88 0-2.755.89-5.002 2.67-6.74 1.78-1.74 4.029-2.61 6.746-2.61 2.951 0 5.264.911 6.939 2.732 1.675 1.82 2.512 4.33 2.512 7.528v.91h-13.281c0 .094.018.21.053.35.035.14.146.386.334.736.187.35.427.665.72.945.292.28.738.532 1.335.753.598.222 1.294.332 2.09.332.89 0 1.746-.169 2.565-.507.82-.339 1.417-.683 1.792-1.033l.527-.525 2.881 3.362z" fill="#fff"></path></svg></li> -->
         </ul>
     </div>
     <!-- END: Aside Menu -->

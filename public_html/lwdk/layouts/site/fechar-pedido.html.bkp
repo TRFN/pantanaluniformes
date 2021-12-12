@@ -1,0 +1,284 @@
+<form method="post" role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">Fechar Pedido</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="border-0 pt-4 m-4">
+        <div class="container shop">
+            <div class="row">
+                <div class="col">
+                    <ul class="breadcrumb font-weight-bold text-6 justify-content-left">
+                        <li class="text-transform-none me-2">
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+			<div class="row">
+                <div class="col-lg mb-3">
+                    <div class="card border-width-3 border-radius-0 border-color-hover-dark mb-5">
+                        <div class="card-body">
+                            <h4 class="font-weight-bold text-uppercase text-color-dark text-4 mb-5">SELECIONE UM METODO DE PAGAMENTO</h4>
+                            <div class="row">
+                                <strong class="text-color-dark text-3-5"></strong>
+                                <div class="form-group col">
+                                    <label class="form-label">FORMAS DE PAGAMENTO</label>
+                                    <div class="custom-select-1">
+                                        <select class="form-select form-control h-auto py-2" name="pagamento" required>
+                                            <option selected disabled readonly value="">Selecione uma forma de pagamento</option>
+											<option value="boleto">Boleto Bancario</option>
+											{formasdepagamento}
+                                        </select>
+                                    </div>
+                                    <div class="padding pt-4 d-flex flex-row-reverse">
+                                        <a
+                                            href="/cartoes/"
+                                            class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3"
+                                        >
+                                            Gerir Cart&otilde;es Cadastrados <i class="fas fa-cog ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <div class="card border-width-3 border-radius-0 border-color-hover-dark mb-5">
+                        <div class="card-body">
+                            <h4 class="font-weight-bold text-uppercase text-4 mb-5">OP&Ccedil;&Atilde;O DE ENTREGA</h4>
+                            <div class="row">
+								<strong class="text-color-dark text-3-5 ln3"></strong>
+                                <div class="form-group col">
+                                    <label class="form-label ln1" style="line-height: 20px;"></label><br>
+	                                <label class="form-label ln2" style="line-height: 20px;"></label>
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <strong class="text-color-dark text-3-5">Alterar endereço de entrega</strong>
+                                <div class="form-group col">
+                                    <label class="form-label">Endereços Cadastrados</label>
+                                    <div class="custom-select-1">
+                                        <select class="form-select form-control h-auto py-2 endereco" name="endereco" required>
+                                            <option selected disabled value="">Selecione um endereço</option>
+											<option data-apply="Retirar na Loja" value="-1">Retirar na Loja</option>
+											{enderecos}
+                                        </select>
+                                    </div>
+                                    <div class="padding pt-4">
+                                        <a
+                                            href="/meus_enderecos/"
+                                            class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3"
+                                        >
+                                            Gerir Endereços <i class="fas fa-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-width-3 border-radius-0 border-color-hover-dark">
+                        <div class="card-body">
+                            <h4 class="font-weight-bold text-uppercase text-4 mb-3">OPÇÕES DE ENTREGA</h4>
+                            <div class="row">
+                                <div class="d-flex flex-column">
+                                    <label class="d-flex align-items-center text-color-grey mb-3 e-loja" for="e-loja" style="line-height: 20px;">
+                                        <input type="radio" name="envio" class="me-2" checked id="e-loja" value="R$ 0,00" />
+                                        RETIRADA: Disponibilidade dos produtos + 1 dia útil | Grátis
+                                    </label>
+                                    <label class="d-flex align-items-center text-color-grey mb-3 e-pac" for="e-pac" style="line-height: 20px;">
+                                        <input id="e-pac" type="radio" name="envio" class="me-2 input_pac" value="" />
+                                        PAC: Disponibilidade dos produtos +&nbsp;<span class="prazo_pac">(...)</span>&nbsp;dias úteis |&nbsp;<span class="preco_pac">R$ (...)&nbsp;</span>
+                                    </label>
+									<label class="d-flex align-items-center text-color-grey mb-3 e-sedex" for="e-sedex" style="line-height: 20px;">
+                                        <input id="e-sedex" name="envio" type="radio" class="me-2 input_sedex" value="" />
+                                        SEDEX: Disponibilidade dos produtos +&nbsp;<span class="prazo_sedex">(...)</span>&nbsp;dias úteis |&nbsp;<span class="preco_sedex">&nbsp;R$ (...)&nbsp;</span>
+                                    </label>
+									<label class="d-flex align-items-center text-color-grey mb-3 e-sedex sedex-indisponivel" for="" style="line-height: 20px; display: none!important;">
+                                        <input disabled readonly name="" type="radio" class="me-2" />
+                                        SEDEX: Valor n&atilde;o fornecido pelo "Correios" neste momento.
+                                    </label>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row mb-4">
+                                <strong class="text-color-dark text-3-5">Atenção</strong>
+                                <div class="form-group col">
+                                    <label class="form-label" style="line-height: 20px;">
+                                        O prazo de entrega começa a contar a partir da aprovação do pagamento. Devido à situação atual de isolamento social imposta pelo governo, podem ocorrer atrasos nas entregas.
+                                    </label>
+                                </div>
+                            </div>
+                            <h4 class="font-weight-bold text-uppercase text-4 mb-3">FORMA DE PAGAMENTO</h4>
+                            <div class="row">
+                                <div class="d-flex flex-column">
+                                    <img alt="Formas de Pagamento" src="img/visa-master.png" height="35" width="249" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="row pb-4 mb-5">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="table-responsive">
+                        <table class="shop_table cart table" id="tabela-carrinho-pagina">
+                            <thead>
+                                <tr class="text-color-dark">
+                                    <th class="product-thumbnail" width="15%">
+                                        &nbsp;
+                                    </th>
+                                    <th class="product-name text-uppercase" width="30%">
+                                        Produto
+                                    </th>
+                                    <th class="product-price text-uppercase" width="15%">
+                                        Preço
+                                    </th>
+                                    <th class="product-quantity text-uppercase" width="20%">
+                                        Quantidade
+                                    </th>
+                                    <th class="product-subtotal text-uppercase text-end" width="20%">
+                                        Subtotal
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="carrinho-pagina">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-4 position-relative">
+                    <div class="card border-width-3 border-radius-0 border-color-hover-dark" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.row', 'padding': {'top': 85}}">
+                        <div class="card-body">
+                            <h4 class="font-weight-bold text-uppercase text-4 mb-3">Código Promocional</h4>
+                            <table class="shop_table cart-totals mb-4">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="row justify-content-between mx-0">
+                                                <div class="col-md-auto px-0 mb-3 mb-md-0">
+                                                    <div class="d-flex align-items-center" id="cupom">
+                                                        <input onkeydown="if(event.keyCode==13){$(this).parent().find('a.btn')[0].click(); return false;}" type="text" style="font-size: 11px;" class="form-control h-auto border-radius-2 line-height-1 py-3" placeholder="Cupom de Desconto" />
+                                                        <a
+                                                            class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3 ms-2"
+                                                        >
+                                                            Aplicar
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+									<tr class="frete_amostra">
+                                        <td>
+                                            <strong class="text-3-5">FRETE</strong>
+                                        </td>
+                                        <td class="">
+                                            <strong class="text-color-dark"><span class="amount valor_frete"></span></strong>
+                                        </td>
+                                    </tr>
+									<tr class="desconto">
+                                        <td>
+                                            <strong class="text-3-5" style="color: #111;">DESCONTO</strong>
+                                        </td>
+                                        <td class="">
+                                            <strong  style="color: #263;">-<span class="amount valor_desconto"></span></strong>
+                                        </td>
+                                    </tr>
+									<tr class="totals">
+                                        <td>
+                                            <strong class="text-color-dark text-3-5">TOTAL</strong>
+                                        </td>
+                                        <td class="text-end price-total">
+                                            <strong class="text-color-dark"><span class="amount text-color-dark text-5 price"></span></strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button
+                                type="submit"
+                                class="btn fechar_pedido btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3 ms-2"
+                            >
+                                Finalizar Compra <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0">
+		<div class="container">
+            <div class="row py-5 my-4">
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t1}</h2>
+                    <ul class="list list-dark list-unstyled mb-0">
+                        <li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p1}" target="_blank" class="text-decoration-none">&nbsp; {end-p1}</a></li>
+                        <li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m1}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l1}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t2}</h2>
+                    <ul class="list list-unstyled mb-0">
+                        <li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {end-p2}</a></li>
+                        <li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m2}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l2}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4">CONTATOS DE URGÊNCIA</h2>
+                    <ul class="list list-dark list-unstyled mb-0">
+                        <li class="font-weight-light mb-1">
+                            <i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp1}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp1}</a>
+                        </li>
+                        <li class="font-weight-light mb-1">
+                            <i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp2}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+<script lwdk-addons>
+	LWDKExec(()=>{
+		$(".e-pac, .e-sedex, .desconto").hide();
+		$("select.endereco").change(function(){
+			let apply = $(this).find("option:selected").data("apply");
+
+			if(typeof apply === "string"){
+				$("label.ln1").text("");
+				$("label.ln2").text("");
+				$("strong.ln3").text(apply);
+				$(".e-pac, .e-sedex").attr("style","display:none!important");
+				$(".e-loja").css("display","flex");
+				$("#e-loja")[0].click();
+			}
+
+			if(typeof apply === "object"){
+				CalcShipping($(".totals .price").text(), apply.cep.split(/[^0-9]/).join(""));
+				$(".e-pac, .e-sedex").css("display","flex");
+				$("label.ln1").text(apply.rua + ", " + apply.numero + " - " + apply.bairro);
+				$("label.ln2").text(apply.cidade + " - " + apply.estado);
+				$("strong.ln3").text("CEP: " + apply.cep);
+				$(".e-loja").attr("style","display:none!important");
+				$("#e-pac")[0].click();
+			}
+		});
+
+		$("input[name=\"envio\"]").click(upd_carrinho);
+
+		setTimeout(()=>($("select.endereco").val($("select.endereco option:not([disabled])").eq(0).val()),$("select.endereco").trigger("change")),200);
+	});
+</script>

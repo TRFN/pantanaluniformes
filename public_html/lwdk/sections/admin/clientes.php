@@ -70,7 +70,7 @@
                     $titulos         = "Nome,E-mail";
                     $dados           = "nome,email";
                     $keyid           = "id";
-                    $titulo          = "Gerir Clientes da Loja virtual";
+                    $titulo          = "Gerir Clientes do Site virtual";
 
                     exit($this->_tablepage($content,$keyword,$titulos,$dados,$keyid,$titulo,$db,$btnTxt)->getCode());
                 }

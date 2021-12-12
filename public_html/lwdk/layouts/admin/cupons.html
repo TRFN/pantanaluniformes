@@ -3,11 +3,11 @@
     <div class="m-subheader ">
     	<div class="d-flex align-items-center">
     		<div class="mr-auto">
-    			<h3 class="m-subheader__title">Cupons de Desconto da Loja</h3>
+    			<h3 class="m-subheader__title">Cupons<span class="d-none d-md-inline">de Desconto do Site</span></h3>
     		</div>
     		<div>
                 <div class="col-7 text-right">
-                    <button class="btn btn-info" onclick="$('#categorias').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+                    <button class="btn btn-info" onclick="$('#categorias').find('.submit:first')[0].click();"><i class="la la-save"></i><span class="d-none d-md-inline">&nbsp;Salvar o que foi modificado</span></button>
                 </div>
     		</div>
     	</div>
@@ -15,7 +15,7 @@
     <!-- END: Subheader -->
     <div class="m-content">
         <div class="row">
-    		<div class="col-xl-12 col-lg-8">
+    		<div class="col-xl-12 col-lg-8 col-12">
     			<div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
     				<div class="tab-content">
     					<div class="tab-pane active" id="categorias">
@@ -28,8 +28,8 @@
                                     <div class="row form-group m-form__group repeater-instance">
                                         <div data-repeater-list="" class="col-12">
                                             <div data-repeater-item="" class="row m--margin-bottom-10">
-												<div class="col-2"></div>
-												<div class="col-5">
+												<div class="col-md-1 col-0"></div>
+												<div class="col-md-5 col-6">
 													<div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
@@ -39,14 +39,14 @@
                                                         <input type="text" class="form-control m-input" style="text-transform: uppercase;" placeholder="Codigo  do Cupom" data-option="text" />
                                                     </div>
                                                 </div>
-												<div class="col-3">
+												<div class="col-md-5 col-4">
 													<div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
                                                                 $
                                                             </span>
                                                         </div>
-                                                        <input type="text" class="form-control m-input" placeholder="Valor do desconto" data-option="text" />
+                                                        <input type="text" class="form-control m-input" placeholder="Valor" data-option="text" />
                                                     </div>
                                                 </div>
                                                 <button data-repeater-delete="delete" class="m--hide btn btn-outline-danger m-btn m-btn--icon"><i class="la la-trash"></i></button>

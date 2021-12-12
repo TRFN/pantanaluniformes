@@ -1,0 +1,151 @@
+<div role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">{titulo}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="border-0 pt-4 m-4">
+        <div class="container shop pb-4">
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <div class="thumb-gallery-wrapper">
+                        <div class="thumb-gallery-detail owl-carousel owl-theme manual nav-inside nav-style-1 nav-dark mb-3">
+                            {imgs}
+                        </div>
+                        <div class="thumb-gallery-thumbs owl-carousel owl-theme manual thumb-gallery-thumbs">
+                            {imgs_thumb}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mb-0 font-weight-bold text-7">{titulo}</h1>
+                    <div class="summary entry-summary position-relative">
+                        <p class="price mb-3">
+                            <span class="sale text-color-dark">{price}</span>
+                            <span class="amount">{old_price}</span>
+                        </p>
+                        <div class="text-3-5 mb-3" style="word-wrap: break-word;">
+                            {descricao-curta}
+                        </div>
+                        <ul class="list list-unstyled text-2">
+                            <!-- <li class="mb-0">SKU: <strong class="text-color-dark">1234567890</strong></li> -->
+                        </ul>
+                        <form class="cart" id="produto_qtd" action="javascript:;" onsubmit="adicionar_carrinho({id},$(this).find('[name=quantity]').val(), true, '#produto_qtd')">
+							<br>
+							<div class="row"><div class="variacao-{id} px-2 text-left text-start col-12"><span class="py-3 d-block font-weight-bold text-3 text-center">Adicione uma ou mais unidades ao carrinho para<br>obter suas variações (Caso o mesmo possua).</span></div></div>
+							<hr />
+							<div class="cart-info-txt" style="font-size: 12px;color: #d00;"></div>
+                            <div class="quantity quantity-lg">
+                                <input type="button" class="minus text-color-hover-light bg-color-hover-primary border-color-hover-primary" value="-" />
+                                <input type="number" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1" />
+                                <input type="button" class="plus text-color-hover-light bg-color-hover-primary border-color-hover-primary" value="+" />
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary">Adicionar ao Carrinho</button>
+							<br>
+                            <hr />
+                        </form>
+                        <ul class="list list-unstyled text-2">
+                            <li class="mb-0 font-weight-semibold"><i class="fas fa-truck me-1"></i> CÁLCULO DE FRETE</li>
+							<li class="mb-0"><br></li>
+							<li class="mb-0">
+								<div class="d-none" id=formas>
+									<label class="d-flex align-items-center text-color-black mb-3 e-loja" for="e-loja" style="line-height: 20px;">
+										RETIRADA: Disponibilidade dos produtos + 1 dia útil | Grátis
+									</label>
+									<label class="d-flex align-items-center text-color-black mb-3 e-pac" for="e-pac" style="line-height: 20px;">
+										PAC: Disponibilidade dos produtos +&nbsp;<span class="prazo_pac"><i class="fa fa-refresh fa-spin"></i></span>&nbsp;dias úteis |&nbsp;<span class="preco_pac">&nbsp;<i class="fa fa-refresh fa-spin"></i>&nbsp;</span>
+									</label>
+									<label class="d-flex align-items-center text-color-grey mb-3 e-sedex pac-indisponivel" for="" style="line-height: 20px; display: none!important;">
+										PAC: Indisponível para seu CEP.
+									</label>
+									<label class="d-flex align-items-center text-color-black mb-3 e-sedex" for="e-sedex" style="line-height: 20px;">
+										SEDEX: Disponibilidade dos produtos +&nbsp;<span class="prazo_sedex"><i class="fa fa-refresh fa-spin"></i></span>&nbsp;dias úteis |&nbsp;<span class="preco_sedex">&nbsp;<i class="fa fa-refresh fa-spin"></i>&nbsp;</span>
+									</label>
+									<label class="d-flex align-items-center text-color-grey mb-3 e-sedex sedex-indisponivel" for="" style="line-height: 20px; display: none!important;">
+										SEDEX: Valor n&atilde;o fornecido pelo "Correios" neste momento.
+									</label>
+									<hr>
+								</div>
+							</li>
+                        </ul>
+                        <div class="quantity quantity-lg" style="width: 50%;">
+                            <input id=cep type="text" class="cep form-control h-auto border-radius-1 line-height-1 py-2" placeholder="Insira seu CEP" />
+                        </div>
+                        <button onclick='CalcShipping("{price}", $("#cep").val()); $("#formas").removeClass("d-none")' class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary">Calcular Frete</button>
+                        <hr />
+                        <div class="d-flex align-items-center">
+                            <a href="javascript:;" onclick="favoritar_produto(this)" data-prod-id="{id}" class="d-flex align-items-center text-decoration-none text-color-dark text-color-hover-primary font-weight-semibold text-2 fav-item"> <i class="{fav} fa-heart me-1"></i> SALVE NOS FAVORITOS </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <div id="description" class="tabs tabs-simple tabs-simple-full-width-line tabs-product tabs-dark mb-2">
+                        <ul class="nav nav-tabs justify-content-start">
+                            <li class="nav-item"><a class="nav-link active font-weight-bold text-3 text-uppercase py-2 px-3" href="#productDescription" data-bs-toggle="tab">Descrição</a></li>
+                        </ul>
+                        <div class="tab-content p-0">
+                            <div class="tab-pane px-0 py-3 active" id="productDescription" style="word-wrap: break-word;">
+                                {descricao-longa}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4 class="font-weight-semibold text-4 mb-3">PRODUTOS RELACIONADOS</h4>
+                    <hr class="mt-0" />
+                    <div class="products row">
+                        <div class="col">
+                            <div
+                                class="owl-carousel owl-theme nav-style-1 nav-outside nav-outside nav-dark mb-0"
+                                data-plugin-options="{'loop': false, 'autoplay': false, 'items': 4, 'nav': true, 'dots': false, 'margin': 20, 'autoplayHoverPause': true, 'autoHeight': true, 'stagePadding': '75', 'navVerticalOffset': '50px'}"
+                            >
+                                <!-- Início ìtens -->
+                                {indicacoes}
+                                <!-- Fim -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0">
+		<div class="container">
+			<div class="row py-5 my-4">
+				<div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+					<h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t1}</h2>
+					<ul class="list list-dark list-unstyled mb-0">
+						<li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p1}" target="_blank" class="text-decoration-none">&nbsp; {end-p1}</a></li>
+						<li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m1}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l1}</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+					<h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t2}</h2>
+					<ul class="list list-unstyled mb-0">
+						<li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {end-p2}</a></li>
+						<li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m2}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l2}</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-10 col-md-9 col-lg-4 text-left">
+					<h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4">CONTATOS DE URGÊNCIA</h2>
+					<ul class="list list-dark list-unstyled mb-0">
+						<li class="font-weight-light mb-1">
+							<i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp1}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp1}</a>
+						</li>
+						<li class="font-weight-light mb-1">
+							<i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp2}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

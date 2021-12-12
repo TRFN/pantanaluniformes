@@ -34,6 +34,13 @@
             return (int)$c;
         }
 
+		function sum_days($date, $days){
+			// return $date;
+			$date = strtotime($date);
+			$date += (int)$days * 60 * 60 * 24;
+			return date('Y-m-d', $date);
+		}
+
         function sum_dates(String $data, int $dias, int $meses = 0, int $anos = 0, String $output = "Y-m-d", String $format = "Y-m-d", String $separator = "-"){
             $o_data = $data;
             $o_format = $format;
@@ -110,6 +117,8 @@
                 $data[1] = ($data[1] < 10?"0":"") . "{$data[1]}";
 
                 $diff = $this->diff_dates($o_data, implode($data[2], explode("Y", implode($data[1], explode("m", implode($data[0], explode("d", $o_format)))))), $o_format) - abs($dias);
+
+				return $diff;
 
                 if($diff > 0){
                     $data[0]++;

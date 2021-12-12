@@ -1,0 +1,124 @@
+<div class="panel card row" id="adc-entrada">
+    <div class="card-dialog card-lg" role="document">
+        <div class="card-content">
+			<div class="card-footer text-right p-4">
+                <a type="button" class="btn btn-warning mr-4" href="/admin/financeiro_home/"> &nbsp;&lt;&nbsp; Página Principal</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a type="button" class="btn btn-info mr-4" href="/admin/financeiro_alterar/"> &nbsp;(?)&nbsp; Ajuda</a>
+            </div>
+            <div class="card-header p-4">
+                <h2 class="card-title pl-4">ADICIONAR ENTRADA</h2>
+                <!-- <span type="button" style="cursor: pointer;" data-dismiss="card" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </span> -->
+            </div>
+
+            <div class="card-footer text-right p-4">
+				<button type="button" class="m-4 btn btn-success submit btn-lg">Adicionar Entrada</button>
+            </div>
+            <div class="card-body row add-form col-md-8 offset-md-2">
+                <input type="hidden" data-name="sect" value="entrada" />
+                <div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-9 col-md-10 col-12 mb-3 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Preencher Automaticamente</label>
+                        <div class="input-group">
+                            <select class="form-control m-bootstrap-select m_selectpicker" data-live-search="true" onchange="listar_produto(this)">
+                                <option disabled selected class="m--hide">Selecione um produto para carregar automaticamente</option>
+                                {produtos-lanc-fin}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-9 col-md-12 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Titulo da entrada:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="nome" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Indentificação:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="patrimonio" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Data:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="date" data-name="data" class="form-control m-input prod" placeholder="" value="{data}" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Valor:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="valor" class="form-control m-input prod money" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Tipo:</label>
+                        <div class="input-group">
+                            <select data-name="tipo" class="form-control prod act-opt" placeholder="" data-option="text">
+                                <option>Venda</option>
+                                <option>Aluguel</option>
+                                <option>Recebimento</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label style="font-weight: bold; text-transform: uppercase;">Forma de Pagamento:</label>
+                        <div class="input-group">
+                            <select data-name="forma" class="form-control prod act-opt" placeholder="" data-option="text">
+								<option>Crédito</option>
+								<option>Débito</option>
+								<option>Pix</option>
+								<option selected>Dinheiro</option>
+								<option>Transferência</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3 d-none Aluguel act-in tipo">
+                        <label style="font-weight: bold; text-transform: uppercase;">Aluguel até:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="date" data-name="data-aluguel-ate" class="form-control m-input prod" placeholder="" value="{data}" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3 act-in tipo Venda Recebimento Outros">
+                        <label style="font-weight: bold; text-transform: uppercase;">Entrada Fixa?</label>
+                        <div class="input-group">
+                            <select data-name="fixo" class="form-control prod act-opt" placeholder="" data-option="text">
+                                <option value="fn">Não</option>
+								<option value="fs">Sim, com data limite</option>
+								<option value="fsv">Sim, por tempo indeterminado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3 d-none fs act-in fixo r-tipo Venda Recebimento Outros">
+                        <label style="font-weight: bold; text-transform: uppercase;">Entrada fixa até:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="date" data-name="data-receb-ate" class="form-control m-input prod" placeholder="" value="{data}" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 p-4 mb-3 d-none fs fsv act-in fixo r-tipo Venda Recebimento Outros">
+                        <label style="font-weight: bold; text-transform: uppercase;">Dia de Recebimento:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="number" data-name="data-receb-dia" class="form-control m-input prod" placeholder="" value="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-4">
+                        <label style="font-weight: bold; text-transform: uppercase;">Observações:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="obs" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-right p-4">
+				<button type="button" class="m-4 btn btn-success submit btn-lg">Adicionar Entrada</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons src="/js/admin/forms/financeiro-2.js" lwdk-vars="on"></script>

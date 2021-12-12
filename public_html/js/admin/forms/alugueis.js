@@ -58,6 +58,28 @@ LWDKExec(function(){
 
 	setTimeout(()=>setValues({produtos}),1000);
 
+	$("[data-value]").each(function(){
+		$(this).val(l=$(this).data("value"));
+	});
+
+	const colorsState = function(){
+		let cores = {
+			Pendente: "#D94416",
+			Baixado: "#5444D9"
+		};
+
+		$(`select[data-name="status"]`).attr("style", "transition: all 600ms ease; border-radius: 0; box-shadow: 0px 0px 1px 1px " + cores[$(`select[data-name="status"]`).val()]);
+	};
+
+	colorsState();
+
+	$(`select[data-name="status"]`).change(colorsState);
+
+	if(!/\{observacoes\}/i.test("{observacoes}")){
+		$(`textarea[data-name=observacoes]`).summernote('destroy');
+		setTimeout(()=>$(`textarea[data-name=observacoes]`).summernote('code', "{observacoes}"), 1500);
+	}
+
     FormCreateAction("dados_aluguel", function(){
         $.post("{myurl}", {cadaluguel: getValues()}, function(success){
             if(success===true){

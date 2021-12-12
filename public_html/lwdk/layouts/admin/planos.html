@@ -1,0 +1,305 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title ">{TITLE}</h3>
+            </div>
+            <div>
+                <div class="col text-right">
+                    <button class="btn btn-outline-danger" onclick="return Go('planos/listar')"><i class="la la-arrow-left"></i>&nbsp;Voltar</button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-info" onclick="$('#dados_produto').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+                </div>
+    		</div>
+        </div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-8">
+                <div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="dados_produto">
+                            <div class="m-portlet__body row">
+
+								<div class="col">
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-2"><label class="col-form-label {cor-legenda}">Esta ativo?</label></div>
+								  <div class="col-2">
+									<div>
+  										<span class="form-group m-form__group text-center" style="display: inline-block;">
+  											<input data-switch="true" data-value="{ativo}" type="checkbox" data-name="ativo" data-bool=true>
+  										</span>
+  									</div>
+								  </div>
+								  <div class="help-block col-md pt-2 {estilo-help}">Caso esteja desativado, este plano n&atilde;o estar&aacute; dispon&iacute;vel no site.</div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1">
+								      <input data-name="id"type="hidden"value="{id}" />
+								      <input data-name="tp"type="hidden"value="prod" />
+								  </div>
+								  <label class="col-form-label col-2 {cor-legenda}">Nome do plano</label>
+								  <div class="col">
+								      <input class="form-control m-input" placeholder="Ex.: Mensal" type="text" data-name="titulo" value="{titulo}">
+								  </div>
+								</div>
+								<div class="form-group m-form__group row"><div class="col-12"><br></div></div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-2 mt-3 {cor-legenda}">Pre&ccedil;o do Plano:</div>
+								  <div class="col-3">
+										<input type="text" data-name="valor" placeholder="Ex.: R$ 59,98" class="form-control money text-left" value="{valor}"/>
+									</div>
+									<div class="col-1"></div>
+									<div class="col-2 {cor-legenda}">Cadastros Permitidos:</div>
+  								  <div class="col-3">
+  									  <input type="number" placeholder="Ex.: 1" data-name="qimov" class="form-control" value="{qimov}"/>
+  								  </div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-3"></div>
+								  <div class="col-3"><span class="help-block {estilo-help}"><i class="la la-info-circle"></i>&nbsp;Valor com base no prazo de vigencia</span></div>
+								  <div class="col-3"></div>
+								  <div class="col"><span class="help-block {estilo-help}"><i class="la la-info-circle"></i>&nbsp;Quantidade permitida de cadastros</span></div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-2 {cor-legenda}">Exibi&ccedil;&otilde;es Simult&acirc;neas:</div>
+								 <div class="col-3">
+									   <input type="number" placeholder="Ex.: 1" data-name="qsimov" class="form-control" value="{qsimov}"/>
+								   </div>
+								   <div class="col-1"></div>
+								   <div class="col-2 {cor-legenda}">Ving&ecirc;ncia do plano (Dias):</div>
+								 <div class="col-3">
+									 <input type="number" placeholder="30" data-name="dimov" class="form-control" value="{dimov}"/>
+								 </div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-3"></div>
+								  <div class="col-3"><span class="help-block {estilo-help}"><i class="la la-info-circle"></i>&nbsp;Exibição de quantos imóveis por vez</span></div>
+								  <div class="col-3"></div>
+								  <div class="col"><span class="help-block {estilo-help}"><i class="la la-info-circle"></i>&nbsp;Prazo, dura&ccedil;&atilde;o e exibi&ccedil;&atilde;o do im&oacute;vel no plano</span></div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-3"><br /></div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-2 {cor-legenda}">Cor principal do tema:</div>
+								  <div class="col-1">
+									  <input type="color" data-name="cor1" style="cursor: pointer;" class="form-control p-0" value="{cor1}">
+									</div>
+									<div class="col mt-3"><span class="help-block {estilo-help}"><i class="la la-info-circle"></i>
+  									  A cor definida determinar&aacute; o estilo da exibi&ccedil;&atilde;o
+  								  </span></div>
+								</div><div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+									<div class="col-2 {cor-legenda}">Cor secund&aacute;ria do tema:</div>
+  								  <div class="col-1">
+  									  <input type="color" data-name="cor2" style="cursor: pointer;" class="form-control p-0" value="{cor2}">
+  									</div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+									<div class="col-2 {cor-legenda}">Dire&ccedil;&atilde;o do efeito:</div>
+  								  <div class="col-3">
+  									  <select class="form-control m_selectpicker" data-name="d-efec">
+										  <option value="left" selected>Esquerda</option>
+										  <option value="right">Direita</option>
+										  <option value="top">Para Cima</option>
+									      <option value="bottom">Para Baixo</option>
+										</select>
+  									</div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-3"><br /></div>
+								</div>
+								<div class="form-group m-form__group row">
+								  <div class="col-1"></div>
+								  <div class="col-3 mt-3 {cor-legenda}">Ordem de exibição:</div>
+								  <div class="col-2">
+									  <select class="form-control m_selectpicker" data-name="ordem">
+										  {ordens}
+									  </select>
+									</div>
+									<div class="col mt-3"><span class="help-block {estilo-help}"><i class="la la-info-circle"></i>
+  									  A ordem definida determinar&aacute; a posi&ccedil;&atilde;o deste plano
+  								  </span></div>
+
+  							  </div><div class="form-group m-form__group row">
+    								  <div class="col-3"><br /></div>
+  								</div>
+
+							  <div class="form-group m-form__group row">
+								<div class="col-1"></div>
+								<div class="col-3 mt-3 {cor-legenda}">Plano aplicado para:</div>
+								<div class="col-3">
+									<select class="form-control m_selectpicker" data-name="aplicarpara">
+										<option value="construtora">Construtora</option>
+										<option value="anunciante">Anunciante</option>
+									</select>
+								  </div>
+								  <div class="col mt-3"><span class="help-block {estilo-help}"><i class="la la-info-circle"></i>
+									A aplica&ccedil;&atilde;o interfere na oferta deste plano a um p&uacute;blico espec&iacute;fico
+								</span></div>
+
+							</div>  <div class="form-group m-form__group row">
+  								  <div class="col-3"><br /></div>
+								</div>
+								</div>
+								<div style="position: absolute; right: 20px; top: 40px; z-index: 10000">
+									<button id="preview" class="btn m-btn m-btn--pill btn-secondary"><i class="la la-eye-slash visualizar"></i>&nbsp;<span id="txtpreview">Esconder</span></button>
+								</div>
+								<div class="col-4 mt-0" id="preview-box" style="transition: all 600ms ease;">
+									<div class="form-group m-form__group row">
+									<div class="col-12 text-center">
+										<div class="price-item">
+		                                    <div class="price-head" id="cores-bg">
+		                                        <h3 class="a-titulo">Mensal</h3>
+		                                        <div class="price-num col-dec-1 fl-wrap">
+		                                            <div class="price-num-item"><span class="mouth-cont"><span class="curen">R$</span><span class="a-valor">29,90</span></span></div>
+		                                            <div class="clearfix"></div>
+		                                        </div>
+		                                        <div class="circle-wrap" style="right:20%;top:50px;">
+		                                            <div class="circle_bg-bal circle_bg-bal_versmall" data-scrollax="properties: { translateY: '50px' }" style="transform: translateZ(0px) translateY(21.6328px);"></div>
+		                                        </div>
+		                                        <div class="circle-wrap" style="right:75%;top:90px;">
+		                                            <div class="circle_bg-bal circle_bg-bal_versmall"></div>
+		                                        </div>
+		                                        <div class="footer-wave">
+		                                            <svg viewBox="0 0 100 25">
+		                                                <path fill="#fff" d="M0 30 V12 Q30 17 55 12 T100 11 V30z"></path>
+		                                            </svg>
+		                                        </div>
+		                                        <div class="footer-wave footer-wave2">
+		                                            <svg viewBox="0 0 100 25">
+		                                                <path fill="#fff" d="M0 90 V12 Q30 7 45 12 T100 11 V30z"></path>
+		                                            </svg>
+		                                        </div>
+		                                    </div>
+		                                    <div class="price-content fl-wrap pl-0">
+		                                        <div class="price-desc fl-wrap pl-0">
+		                                            <ul class="no-list-style pl-0">
+		                                                <li>Cadastro de <span class="a-qimov">1</span> <span class="a-qimov imovel">imóvel</span></li>
+														<li>Exibição de <span class="a-qsimov">1</span> <span class="a-qsimov imovel">imóvel</span> por vez</li>
+		                                                <li><span class="a-dimov">30</span> dia(s) de exibição</li>
+		                                                <li><span class="a-dimov">30</span> dia(s) de indicações de compradores</li>
+		                                                <li>Indicações ilimitadas</li>
+		                                                <li>*&nbsp;Pagamento efetuado somente <br>por CARTÃO DE CRÉDITO</li>
+		                                            </ul>
+		                                            <a href="javascript:;" id="cor-botao" class=" price-link modal-open">ESCOLHO ESSE!</a>
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+								</div>
+                                <div class="form-group m-form__group row"><div class="col-12"><br><br><br></div></div>
+								<div class="col-12" style="position: absolute; bottom: 0; left: 15px; width: calc( 98% - 4px); background-color: #fff">
+									<div class="m-portlet__foot m-portlet__foot--fit">
+										<div class="m-form__actions">
+											<div class="row">
+		                                        <div class="col-12"><br>
+												</div>
+		                                        <div class="col-md-4">
+												</div>
+		                                        <div class="col-md-4 text-right">
+													<button class="btn submit btn-info btn-block" onclick="saveData()"><i class="la la-save"></i>&nbsp;{botao-txt}</button>
+												</div>
+		                                            <div class="col-12"><br>
+		    										</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/paginas.js"></script>
+
+<script lwdk-addons>
+	LWDKExec(()=>($("[data-name=\"d-efec\"]").val("{d-efec}").selectpicker("refresh")));
+	LWDKExec(()=>($("[data-name=\"aplicarpara\"]").val("{aplicarpara}").selectpicker("refresh")));
+	LWDKExec(()=>One("#preview").click(function(){
+		$("#preview-box").data("state") == null &&	$("#preview-box").data("state", "open");
+
+		let state = $("#preview-box").data("state");
+
+		if(state == "closed"){
+			state = "open";
+			$("#preview i").removeClass("la-eye").addClass("la-eye-slash");
+			$("#txtpreview").text("Esconder");
+		} else if(state == "open"){
+			state = "closed";
+			$("#preview i").removeClass("la-eye-slash").addClass("la-eye");
+			$("#txtpreview").text("Exibir");
+		}
+
+		$("#preview-box").data("state", state);
+
+
+		state != "closed"
+			? $(".m-portlet").attr("style", "max-height: 960px;transition: all 600ms ease;")
+			: $(".m-portlet").attr("style", "max-height: 840px;transition: all 600ms ease;");
+
+		$("#preview-box").removeClass(state === "closed" ? "col-4":"col-1").addClass(state === "closed" ? "col-1":"col-4");
+
+
+		$("#preview-box .price-item").attr("style","opacity: " + (state === "closed" ? "0":"1") + "!important;");
+	}));
+
+	if(typeof watchElement === "undefined"){
+		function updateGradient(){
+			watchElement(".form-control");
+
+			let effect = $("#cores-bg").data("color-effect"),
+				from   = $("#cores-bg").data("color-from"),
+				to     = $("#cores-bg").data("color-to"),
+				final  = `linear-gradient(to ${effect}, ${from}, ${to});`;
+
+			$("#cores-bg").attr("style","background: " + final + "!important; transition: all 600ms ease;");
+
+			setTimeout(updateGradient, 50);
+		}
+
+		function watchElement(el){
+			$(el).each(function(){
+				switch($(this).data("name")){
+					case "cor1": case "cor2": case "d-efec":
+						$("#cores-bg").data(
+							(
+								$(this).data("name") == "cor1"
+									? "color-from"
+									: ($(this).data("name") == "cor2"
+										? "color-to"
+										: "color-effect"
+									)
+							), $(this).val()
+						);
+						$(this).data("name") == "cor1" &&
+						$("#cor-botao").attr("style","background:" + $(this).val() + "!important; transition: all 600ms ease;");
+					break;
+					case "valor":
+						$(".a-" + $(this).data("name")).text($(this).val().split("R$ ").join(""));
+					break;
+					default:
+						$(".a-" + $(this).data("name")).text($(this).val());
+						$(".imovel.a-" + $(this).data("name")).html(parseInt($(this).val()) < 2?"imóvel":"imóveis");
+					break;
+				}
+			});
+		}
+
+		LWDKExec(()=>{
+			updateGradient();
+		});
+	}
+</script>

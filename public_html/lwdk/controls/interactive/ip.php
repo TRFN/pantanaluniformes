@@ -29,6 +29,7 @@
 			}
 
 			function get($by = "*", $array = false){
+				$data = [];
 				$data["status"] = isset($this->instance->details["geoplugin_status"]) && !empty($this->instance->details["geoplugin_status"]) && $this->instance->details["geoplugin_status"] == "200" ? "success":"fail";
 
 				if($data["status"] == "success"){

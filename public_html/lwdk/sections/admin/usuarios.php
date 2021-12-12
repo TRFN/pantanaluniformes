@@ -1,6 +1,7 @@
 <?php
 trait admin_users {
     use administradores;
+
     function _admin_protect_(){
         if(!$this->page_session(true) && $this->url(0) != "login"){
             header("Location: " . $this->rootDir() . "login/");
@@ -43,6 +44,10 @@ trait admin_users {
     }
 
     function page_logout($content){
+
+		/* LOG DE ACESSO */
+		$this->log->post("Logout do painel administrativo.");
+
         $this->admin_sessao_object()->logout();
         if($content !== "no-redirect"){
             header("Location: " . $this->rootDir() . "login/");
@@ -50,6 +55,7 @@ trait admin_users {
     }
 
     function page_login($content){
+
         $content->uiTemplate("admin/login");
 
         $content->applyVars(array("url_retorno" => isset($_GET["ref"]) ? $_GET["ref"]:$this->rootDir()));
@@ -62,6 +68,8 @@ trait admin_users {
             }
 
             if(($id=$this->admin_sessao($_POST["email"],$_POST["password"])) !== false){
+				/* LOG DE ACESSO */
+				$this->log->post("Efetuou login no painel administrativo.", [$this->admin_sessao()->nome, $this->admin_sessao()->email]);
                 exit("on");
             }
 

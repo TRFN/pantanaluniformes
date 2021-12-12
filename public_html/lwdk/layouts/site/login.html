@@ -1,0 +1,163 @@
+<div role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">Login / Cadastro</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-6 offset-xl-3">
+                <div class="tabs">
+                    <ul class="nav nav-tabs nav-justified flex-column flex-md-row">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#popular10" data-bs-toggle="tab" class="text-center">Faça Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recent10" data-bs-toggle="tab" class="text-center">Registrar</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a id="recuperar_conta" class="nav-link" href="#recuperar10" data-bs-toggle="tab" class="text-center"></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+						<div id="popular10" class="tab-pane active">
+                            <div class="container">
+                                <div id="frmSignIn" class="needs-validation">
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">Seu E-mail<span class="text-color-danger">*</span></label>
+                                            <input type="text" value="" data-name="email" class="form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">Senha <span class="text-color-danger">*</span></label>
+                                            <input type="password" value="" data-name="password" class="form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-between">
+                                        <div class="form-group col-md-auto">
+                                            <div class="custom-control custom-checkbox">
+                                                <input checked=checked type="checkbox" data-name="manter-conectado" class="custom-control-input" id="rememberme" />
+                                                <label class="form-label custom-control-label cur-pointer text-2" for="rememberme">&nbsp;Mantenha-me conectado</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-auto">
+                                            <a class="text-decoration-none text-color-dark text-color-hover-primary font-weight-semibold text-2" onclick="$('#recuperar_conta')[0].click(); return false;" href="#">Esqueceu a Senha?</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <button type="submit" class="submit btn btn-dark btn-modern w-100 text-uppercase border-radius-2 font-weight-bold text-3 py-3">Login</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="recent10" class="tab-pane">
+                            <div class="container">
+                                <div id="frmSignUp">
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">Nome <span class="text-color-danger">*</span></label>
+                                            <input type="text" value="" data-name="name" class="form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">CPF ou CNPJ<span class="text-color-danger">*</span></label>
+                                            <input type="text" value="" data-name="doc" class="cpfcnpj form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">E-mail<span class="text-color-danger">*</span></label>
+                                            <input type="text" value="" data-name="email" class="form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">Senha <span class="text-color-danger">*</span></label>
+                                            <input type="password" value="" data-name="password" class="form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">Confirmar Senha <span class="text-color-danger">*</span></label>
+                                            <input type="password" value="" data-name="c_password" class="form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <button type="submit" class="submit btn btn-dark btn-modern w-100 text-uppercase border-radius-2 font-weight-bold text-3 py-3">Cadastrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div id="recuperar10" class="tab-pane">
+                            <div class="container">
+                                <div id="frmRecuperar" class="needs-validation">
+									<div class="row">
+                                        <div class="col">
+											<h4>Insira seu email para recuperar seu acesso</h4>
+											<p>Caso voc&ecirc; n&atilde;o se recorde de sua senha, ou por ventura, tenha perdido seu acesso, use esta alternativa via e-mail.<br></p>
+										</div>
+                                    </div>
+									<div class="row">
+                                        <div class="form-group col">
+                                            <label class="form-label text-3">Seu E-mail<span class="text-color-danger">*</span></label>
+                                            <input type="text" value="" data-name="email" class="form-control form-control-lg text-4" required />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <button type="submit" class="submit btn btn-dark btn-modern w-100 text-uppercase border-radius-2 font-weight-bold text-3 py-3">Enviar email de recupera&ccedil;&atilde;o</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0">
+        <div class="container">
+            <div class="row py-5 my-4">
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t1}</h2>
+                    <ul class="list list-dark list-unstyled mb-0">
+                        <li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p1}" target="_blank" class="text-decoration-none">&nbsp; {end-p1}</a></li>
+                        <li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m1}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l1}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t2}</h2>
+                    <ul class="list list-unstyled mb-0">
+                        <li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {end-p2}</a></li>
+                        <li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m2}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l2}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4">CONTATOS DE URGÊNCIA</h2>
+                    <ul class="list list-dark list-unstyled mb-0">
+                        <li class="font-weight-light mb-1">
+                            <i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp1}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp1}</a>
+                        </li>
+                        <li class="font-weight-light mb-1">
+                            <i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp2}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="js/site/login.js" lwdk-vars=on lwdk-addons></script><script src="js/site/register.js"></script>

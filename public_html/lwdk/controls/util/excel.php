@@ -26,6 +26,10 @@
                 return $this->EXCEL;
             }
 
+			function applyStyle($range, $style){
+				$this->Instance()->getActiveSheet()->getStyle($range)->applyFromArray($style);
+			}
+
             function SetDocumentTitle(String $title=""){
                 $this->TITLE = $title;
                 $this->EXCEL->getProperties()->setCreator($siteurl=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER["HTTP_HOST"]}{$_SERVER["REQUEST_URI"]}")

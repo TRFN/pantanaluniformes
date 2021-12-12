@@ -1,0 +1,287 @@
+<div role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">{cli_name}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+                    <h5 class="font-weight-semi-bold pt-3">Menu</h5>
+                    <ul class="nav nav-list flex-column">
+                        <li class="nav-item"><a class="nav-link" href="/meu_perfil/">Meu Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/favoritos/">Favoritos</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="/meus_enderecos/">Meus Endereços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/minhas_compras/">Minhas Compras</a></li>
+						<li class="nav-item"><a class="nav-link" href="/carrinho_de_compras/" style="color: #d44;">Carrinho de Compras</a></li>
+						<!-- li class="nav-item"><a class="nav-link" href="/cartoes/">Cart&otilde;es de Cr&eacute;dito</a></li -->
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </aside>
+                <br />
+                <a type="button" href="/logout/" class="btn btn-outline btn-danger mb-2">Sair</a>
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <div class="card mb-5">
+							<div class="container shop">
+
+								<div class="row justify-content-between mx-0">
+									<div class="col-md-6 px-0 mb-3 mb-md-0"><br></div>
+								</div>
+					            <div class="row">
+					                <div class="col">
+					                    <ul class="breadcrumb font-weight-bold text-6 justify-content-left">
+										<li class="text-transform-none me-2">
+											&nbsp;
+										</li>
+											<li class="text-transform-none me-2">
+					                            Itens no Carrinho
+					                        </li>
+					                    </ul>
+					                </div>
+					            </div>
+								<div class="row justify-content-between mx-0">
+									<div class="col-md-6 px-0 mb-3 mb-md-0"><br></div>
+								</div>
+					            <div class="row pb-4 mb-5">
+					                <div class="col-lg-12 mb-5 mb-lg-0">
+					                    <div class="table-responsive">
+					                        <table class="shop_table cart table" id="tabela-carrinho-pagina">
+					                            <thead>
+					                                <tr class="text-color-dark">
+					                                    <th class="product-thumbnail" width="15%">
+					                                        &nbsp;
+					                                    </th>
+					                                    <th class="product-name text-uppercase" width="30%">
+					                                        Produto
+					                                    </th>
+					                                    <th class="product-price text-uppercase" width="15%">
+					                                        Preço
+					                                    </th>
+					                                    <th class="product-quantity text-uppercase" width="20%">
+					                                        Quantidade
+					                                    </th>
+					                                    <th class="product-subtotal text-uppercase text-end" width="20%">
+					                                        Subtotal
+					                                    </th>
+					                                </tr>
+					                            </thead>
+					                            <tbody id="carrinho-pagina">
+
+					                            </tbody>
+												<tfooter>
+													<tr class="totals" style="vertical-align: middle;">
+
+
+														<td class="text-end">
+															<strong class="text-color-dark text-3-5 text-uppercase">Total</strong>
+														</td>
+														<td class="text-center price-total">
+															<strong class="text-color-dark"><span class="amount text-color-dark text-5 price">R$ 431</span></strong>
+														</td>
+
+
+
+
+														<td colspan=3 class="text-end"><a
+															type="submit"
+															href="/fechar_pedido/"
+															class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3 ms-2"
+														>
+															FINALIZAR compra
+														</a></td>
+													</tr>
+												</tfooter>
+					                        </table>
+					                    </div>
+					                </div>
+					            </div>
+								<div class="row justify-content-between mx-0">
+									<div class="col-md-6 px-0 mb-3 mb-md-0"></div>
+									<div class="col-md-6 px-0 mb-3 mb-md-0">
+										<div class="d-flex align-items-center">
+											<input type="text" class="form-control h-auto border-radius-2 line-height-1 py-3" name="couponCode" placeholder="Insira Aqui" />
+											<button
+												type="submit"
+												class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3 ms-2"
+											>
+												Aplicar Cupom
+											</button>
+										</div>
+										<div class="col-md-auto"></div>
+									</div>
+								</div>
+								<div class="row justify-content-between mx-0">
+									<div class="col-md-6 px-0 mb-3 mb-md-0"><br></div>
+								</div>
+					        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section section-height-3 bg-color-grey-scale-1 m-0 border-0">
+		<div class="container">
+            <div class="row py-5 my-4">
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t1}</h2>
+                    <ul class="list list-dark list-unstyled mb-0">
+                        <li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p1}" target="_blank" class="text-decoration-none">&nbsp; {end-p1}</a></li>
+                        <li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m1}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l1}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left mb-5 mb-lg-0">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4" style="text-transform: uppercase;">{end-t2}</h2>
+                    <ul class="list list-unstyled mb-0">
+                        <li class="font-weight-light mb-1"><i class="fas fa-phone-alt"></i> <a href="tel:+55{end-p2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {end-p2}</a></li>
+                        <li class="font-weight-light mb-1" style="width: 81%;"><i class="fas fa-map-marker-alt"></i> <a href="{end-m2}" target="_blank" class="text-decoration-none text-color-hover-primary">{end-l2}</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-10 col-md-9 col-lg-4 text-left">
+                    <h2 class="font-weight-bold text-4 line-height-1 mt-4 mb-4">CONTATOS DE URGÊNCIA</h2>
+                    <ul class="list list-dark list-unstyled mb-0">
+                        <li class="font-weight-light mb-1">
+                            <i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp1}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp1}</a>
+                        </li>
+                        <li class="font-weight-light mb-1">
+                            <i class="fab fa-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=55{whatsapp2}" target="_blank" class="text-decoration-none text-color-hover-primary">&nbsp; {whatsapp2}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script lwdk-addons>
+	if(typeof endereco_cli === "undefined"){
+		const endereco_cli = window.endereco_cli = new Object();
+	}
+
+	LWDKExec(()=>One(".repeater-instance").repeater({
+	   initEmpty: !1,
+	   isFirstItemUndeletable: true,
+	   show: function (e){
+	       $(this).slideDown();
+	       $(this).find('button').removeClass("d-none");
+		   $(this).find('label>strong>span').text("Adicional " + String($(".cadastro-endereco").length-1));
+	   },
+	   hide: function (e) {
+	       $(this).slideUp(e);
+	   }
+	}));
+
+	LWDKExec(()=>{
+		endereco_cli.buscar_cep = (function(obj){
+			cep = obj.value.split(/[^0-9]/).join('');
+
+			if(cep.length > 8){
+				$(obj).addClass("is-invalid");
+
+				$(obj).closest(".cadastro-endereco").find('[data-name="rua"]').val('');
+				$(obj).closest(".cadastro-endereco").find('[data-name="bairro"]').val('');
+				$(obj).closest(".cadastro-endereco").find('[data-name="complemento"]').val('').prop("disabled",true);
+				$(obj).closest(".cadastro-endereco").find('[data-name="cidade"]').val('');
+				$(obj).closest(".cadastro-endereco").find('[data-name="estado"]').val('');
+				$(obj).closest(".cadastro-endereco").find('[data-name="numero"]').val('').prop("disabled",true);
+			} else if(cep.length == 8){
+				swal.fire({
+					title: '',
+					text: 'Buscando cep, aguarde...',
+					showCancelButton: false,
+					showConfirmButton: false
+				});
+
+				$.get(`//viacep.com.br/ws/${cep}/json/`, function(data){
+					if(typeof data.erro == "boolean" && data.erro){
+						$(obj).addClass("is-invalid");
+						$(obj).closest(".cadastro-endereco").find('[data-name="rua"]').val('');
+						$(obj).closest(".cadastro-endereco").find('[data-name="bairro"]').val('');
+						$(obj).closest(".cadastro-endereco").find('[data-name="complemento"]').val('').prop("disabled",true);
+						$(obj).closest(".cadastro-endereco").find('[data-name="cidade"]').val('');
+						$(obj).closest(".cadastro-endereco").find('[data-name="estado"]').val('');
+						$(obj).closest(".cadastro-endereco").find('[data-name="numero"]').val('').prop("disabled",true);
+						swal.fire("","Cep incorreto.","error");
+					} else {
+						$(obj).removeClass("is-invalid");
+						$(obj).val(data.cep);
+						$(obj).closest(".cadastro-endereco").find('[data-name="rua"]').val(data.logradouro);
+						$(obj).closest(".cadastro-endereco").find('[data-name="bairro"]').val(data.bairro);
+						$(obj).closest(".cadastro-endereco").find('[data-name="complemento"]').val(data.complemento).prop("disabled",false);
+						$(obj).closest(".cadastro-endereco").find('[data-name="cidade"]').val(data.localidade.toUpperCase());
+						$(obj).closest(".cadastro-endereco").find('[data-name="estado"]').val(data.uf.toUpperCase());
+						$(obj).closest(".cadastro-endereco").find('[data-name="numero"]').prop("disabled",false);
+						swal.close();
+					}
+				});
+			} else {
+				$(obj).removeClass("is-invalid");
+			}
+			return true;
+		});
+		endereco_cli.get = (
+			() => MapTranslate(MapEl(".cadastro-endereco", function(){ return MapEl($(this).find("input"), function(){return (this.value);}, false, false).join("|")}, false, false),MapEl(".cadastro-endereco:first input", function(){ return $(this).data("name"); }))
+		);
+		endereco_cli.set = ((data) => {
+			first = true;
+			for(var e of data){
+				if(!first){
+					$("[data-repeater-create]")[0].click();
+				}
+				first=false;
+				for(let a in e){
+					$(".cadastro-endereco:last").find('[data-name="' + a + '"]').val(e[a]).prop("disabled", !/(cep|numero|complemento)/.test(a));
+				}
+			}
+		});
+		endereco_cli.salvar = (() => {
+			let dados = endereco_cli.get();
+
+			if(dados[0].rua.length == 0 || dados[0].cep.length !== 9){
+				return swal.fire('','O endere&ccedil;o principal est&aacute; incorreto.', "error").then(()=>setTimeout(()=>{
+					$(".cadastro-endereco:first input:first").addClass("is-invalid").focus()[0].click();
+					$(".back-to-top")[0].click();
+				}, 800));
+			}
+
+			if(dados[0].numero.length == 0){
+				return swal.fire('','Especifique uma numera&ccedil;&atilde;o', "warning").then(()=>setTimeout(()=>{
+					$(".cadastro-endereco:first input[data-name=\"numero\"]").addClass("is-invalid").keyup(()=>{$(".cadastro-endereco:first input[data-name=\"numero\"]").removeClass("is-invalid")}).focus()[0].click();
+					$(".back-to-top")[0].click();
+				}, 800));
+			}
+
+			for (var i = 1; i < dados.length; i++) {
+				if(dados[i].rua.length == 0 || dados[i].cep.length !== 9){
+					dados.splice(i,1);
+				} else {
+					if(dados[i].numero.length == 0){
+						return swal.fire('','Especifique uma numera&ccedil;&atilde;o', "warning").then(()=>setTimeout(()=>{
+							$(".cadastro-endereco:eq(" + String(i) + ") input[data-name=\"numero\"]").addClass("is-invalid").keyup(()=>{$(".cadastro-endereco:first input[data-name=\"numero\"]").removeClass("is-invalid")}).focus()[0].click();
+						}, 800));
+					}
+				}
+			}
+
+			$.post("/action_mudar_endereco/", {enderecos: dados}, function(success){
+				if(success){
+					swal.fire("","Altera&ccedil;&otilde;es salvas com sucesso!","success").then(()=>window.location.reload());
+				} else {
+					swal.fire("","Houve uma falha ao salvar as altera&ccedil;&otilde;es...");
+				}
+			});
+		});
+	});
+
+	LWDKExec(()=>endereco_cli.set({cli_enderecos}));
+</script>

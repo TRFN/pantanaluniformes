@@ -93,7 +93,7 @@ LWDKExec(function(){
 
         $.post("{myurl}", {cadprod: data}, function(success){
             if(success===true){
-                successRequest(("{acao}" === "cadastrado" ? function(){window.top.location.href="/admin/produto/listar/";}:function(){LWDKLoadPage(LWDKLocal, LWDKInitFunction.exec)}), "O produto foi {acao} com sucesso!");
+                successRequest(("{acao}" === "cadastrado" ? function(){window.top.location.href="/admin/produto/listar/";}:function(){history.go(0)}), "O produto foi {acao} com sucesso!");
             } else {
                 errorRequest(refresh);
             }

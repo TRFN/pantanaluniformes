@@ -54,8 +54,9 @@ LWDKInitFunction.addFN(function(){
         ['style', ['bold', 'italic', 'underline']],
         ['fontsize', ['fontsize']],
         ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['height', ['height']]
+        ['para', ['ol', 'paragraph']],
+        ['height', ['height']],
+		['view', ['fullscreen']]
     ] }),700);
     });
 });

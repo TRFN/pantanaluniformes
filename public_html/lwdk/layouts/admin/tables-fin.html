@@ -1,0 +1,300 @@
+<div class="m-subheader">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title">Painel Financeiro</h3>
+            <span class="d-md-none d-block"><br /></span>
+        </div>
+        <div></div>
+    </div>
+</div>
+
+<div class="m-content">
+    <div class="row">
+        <span class="col-12 d-md-none d-block"><br /></span>
+        <div class="col-lg-12 col-sm-10 col-sm-offset-1 col-lg-offset-0">
+            <div class="card">
+                <div class="card-body row">
+                    <div class="col-md-12" aria-haspopup="true">
+                        <h2 class="saldo">Saldo Atual: <span>R$ 0,00</span></h2>
+                    </div>
+                </div>
+                <div class="card-body row">
+                    <div class="col-md-12 text-center" aria-haspopup="true"><h2>Opcões Principais</h2></div>
+
+                    <div class="col-md-4 text-center" aria-haspopup="true">
+                        <a data-toggle="modal" data-target="#adc-entrada" class="m-menu__link">
+                            <span class="btn btn-lg btn-success my-4"><i class="la la-plus"></i>&nbsp;ADICIONAR ENTRADA</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 text-center" aria-haspopup="true">
+                        <a data-toggle="modal" data-target="#adc-saida" class="m-menu__link">
+                            <span class="btn btn-lg btn-danger my-4"><i class="la la-minus"></i>&nbsp;ADICIONAR SAÍDA</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 text-center" aria-haspopup="true">
+                        <a data-toggle="modal" data-target="#adc-gasto-fixo" class="m-menu__link">
+                            <span class="btn btn-lg btn-info my-4"><i class="la la-money"></i>&nbsp;ADICIONAR GASTO FIXO</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 text-center" aria-haspopup="true">
+                        <a class="m-menu__link">
+                            <span class="btn btn-lg btn-dark my-4"><i class="la la-cogs"></i>&nbsp;GERENCIAR DADOS</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 text-center" aria-haspopup="true">
+                        <a class="m-menu__link">
+                            <span class="btn btn-lg btn-primary my-4"><i class="la la-edit"></i>&nbsp;RELATÓRIOS</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 text-center" aria-haspopup="true">
+                        <a class="m-menu__link">
+                            <span class="btn btn-lg btn-warning my-4"><i class="la la-file"></i>&nbsp;EXPORTAR</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-12 text-center" aria-haspopup="true">
+                        <br />
+                        <br />
+                        <h2>Opcões Secundárias</h2>
+                    </div>
+
+                    <div class="col-md-6 text-center" aria-haspopup="true">
+                        <a data-toggle="modal" data-target="#adc-receb-fixo" class="m-menu__link">
+                            <span class="btn btn-lg btn-success my-4"><i class="la la-plus"></i>&nbsp;ADICIONAR RECEBIMENTO FIXO</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6 text-center" aria-haspopup="true">
+                        <a class="m-menu__link">
+                            <span class="btn btn-lg btn-danger my-4"><i class="la la-minus"></i>&nbsp;ADICIONAR SAÍDA FUTURA</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="resumo" class="col-12"></div> -->
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="adc-entrada" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ADICIONAR ENTRADA</h5>
+                <span type="button" style="cursor: pointer;" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </span>
+            </div>
+            <div class="modal-body row add-form">
+                <input type="hidden" data-name="sect" value="entrada" />
+                <div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-9 col-md-10 col-12 mb-3 p-4 mb-3">
+                        <label>Preencher Automaticamente</label>
+                        <div class="input-group">
+                            <select class="form-control m-bootstrap-select m_selectpicker" data-live-search="true" onchange="listar_produto(this)">
+                                <option disabled selected class="m--hide">Selecione um produto para carregar automaticamente</option>
+                                {produtos-lanc-fin}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-4 mb-3">
+                        <label>Titulo da entrada:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="nome" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Indentificação:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="patrimonio" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Data:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="date" data-name="data" class="form-control m-input prod" placeholder="" value="{data}" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Valor:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="valor" class="form-control m-input prod money" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Tipo:</label>
+                        <div class="input-group">
+                            <select data-name="tipo" class="form-control prod" placeholder="" data-option="text">
+                                <option>Venda</option>
+                                <option>Aluguel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-4">
+                        <label>Observações:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="obs" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success submit">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="adc-saida" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ADICIONAR SAÍDA</h5>
+                <span type="button" style="cursor: pointer;" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </span>
+            </div>
+            <div class="modal-body row add-form">
+                <input type="hidden" data-name="sect" value="saida" />
+                <div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-4 mb-3">
+                        <label>Titulo da saída:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="nome" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Data:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="date" data-name="data" class="form-control m-input prod" placeholder="" value="{data}" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Valor:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="valor" class="form-control m-input prod money" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 p-4">
+                        <label>Observações:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="obs" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success submit">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="adc-gasto-fixo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ADICIONAR GASTO FIXO</h5>
+                <span type="button" style="cursor: pointer;" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </span>
+            </div>
+            <div class="modal-body row add-form">
+                <input type="hidden" data-name="sect" value="gasto-fixo" />
+                <div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-9 col-md-12 col-sm-12 p-4 mb-3">
+                        <label>Titulo do gasto fixo/conta:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="nome" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Dia do mês:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="number" data-name="dia-do-mes" class="form-control m-input prod" placeholder="Ex.: 25" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Valor:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="valor" class="form-control m-input prod money" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12 col-sm-12 p-4">
+                        <label>Observações:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="obs" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success submit">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="adc-receb-fixo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">ADICIONAR RECEBIMENTO FIXO</h5>
+                <span type="button" style="cursor: pointer;" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </span>
+            </div>
+            <div class="modal-body row add-form">
+                <input type="hidden" data-name="sect" value="receb-fixo" />
+                <div class="form-group col-12 mb-3 row p-0 m-0">
+                    <div class="col-lg-9 col-md-12 col-sm-12 p-4 mb-3">
+                        <label>Titulo do recebimento fixo mensal:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="nome" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Dia do mês:</label>
+                        <div class="input-group">
+                            <input style="font-size: 12px;" type="number" data-name="dia-do-mes" class="form-control m-input prod" placeholder="Ex.: 25" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 p-4 mb-3">
+                        <label>Valor:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="valor" class="form-control m-input prod money" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12 col-sm-12 p-4">
+                        <label>Observações:</label>
+                        <div class="input-group">
+                            <input type="text" data-name="obs" class="form-control m-input prod" placeholder="" data-option="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success submit">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script lwdk-addons src="/js/admin/fin.js" lwdk-vars="on"></script> -->
+
+<script lwdk-addons src="/js/admin/forms/financeiro-2.js" lwdk-vars="on"></script>

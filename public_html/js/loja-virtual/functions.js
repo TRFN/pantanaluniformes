@@ -193,7 +193,7 @@ const MapTranslate = window.MapTranslate = function MapTranslate(map, k, sep="|"
         let oldmap = map[i].split(sep);
         map[i] = new Object();
         for(let j = 0; j < k.length; j++){
-            map[i][k[j]] = oldmap[j];
+			map[i][k[j]] = oldmap[j];
         }
     }
 
@@ -227,7 +227,7 @@ const GetFormData = window.GetFormData = function GetFormData(context="html"){
                     $(this).data("json")?"1":"0",
                     $(this).data("bool")?"1":"0"
                 ].join("|");
-            }),
+            },false,false),
             ["id","data","json", "bool"]
         ),
         result = {};
@@ -239,21 +239,24 @@ const GetFormData = window.GetFormData = function GetFormData(context="html"){
     }
 
     for(let i in map){
-        typeof map[i] !== "function" && (result[map[i].id] = map[i].data);
+        typeof map[i] !== "function" && (
+			(/number|string/).test(typeof result[map[i].id]) && (result[map[i].id] = [result[map[i].id]]),
+			typeof result[map[i].id] == "object"
+				? result[map[i].id].push(map[i].data)
+				: (result[map[i].id] = map[i].data)
+		);
     }
 
     return result;
 };
 
 const Go = window.Go = ((url) => {
-    LWDKInitFunction.exec();
-    setTimeout((()=>history.pushState("","",`{URLPrefix}/${url}/`)),400);
-	initApp = false;
+    location.href=`{URLPrefix}/${url}/`;
 });
 
 LWDKInitFunction.addFN(()=>$("select.m_selectpicker").each(function(){$('.js-dropdn-close').each(function(){this.click();}); return((s=One(this,"data__live__search")).length>0?s:{selectpicker:()=>{}}).selectpicker({liveSearch: true})}));
 
-setInterval(()=>One(".dropdown-menu li:not(.disabled)", "verify__empty").each(function(){if(this.innerText==""){ $(this).remove(); } }),150);
+setInterval(()=>One(".dropdown-menu li:not(.disabled)", "verify__empty").each(function(){if(this.innerText==""){ $(this).hide(); } }),150);
 
 const LU = window.LU = function LU(id,percent=0){
     $(id).css("width",(String(str=((percent)*100))+"%")).text(String(~~str)+"%");

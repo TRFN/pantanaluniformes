@@ -322,6 +322,10 @@
 
                 $content->loadParentVars();
 
+				if(isset($vars["TITLE"])){
+					$vars["TITLE"] = ucfirst(mb_strtolower($vars["TITLE"]));
+				}
+
                 $content->applyVars($vars);
 
                 $content->applyModels($models);

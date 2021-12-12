@@ -1,6 +1,9 @@
 <?php
 function ctrl_connect_pagseguro($args){
     $instance = new class extends APPControls {
+
+		//
+
         function __construct(){
             $this->sys = $this->loadPlugin("PagSeguro@PagSeguro");
         }
@@ -159,8 +162,6 @@ function ctrl_connect_pagseguro($args){
 
 			return $this->database()->query($fdb, $query);
 		}
-
-
 
 		private function getStatusVar($db, $tid, $key, $nullpointer=""){
 			$entregue = $this->database()->query("{$db}-status", "id={$tid}", "{$key}");

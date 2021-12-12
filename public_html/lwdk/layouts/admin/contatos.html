@@ -3,11 +3,11 @@
     <div class="m-subheader ">
     	<div class="d-flex align-items-center">
     		<div class="mr-auto">
-    			<h3 class="m-subheader__title">Contatos da Loja</h3>
+    			<h3 class="m-subheader__title">Contatos do Site</h3>
     		</div>
     		<div>
                 <div class="col-7 text-right">
-                    <button class="btn btn-info" onclick="$('#contatos').find('.submit:first')[0].click();"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+                    <button class="btn btn-info" onclick="$('#contatos').find('.submit:first')[0].click();"><i class="la la-save"></i><span class="d-none d-md-inline">&nbsp;Salvar</span></button>
                 </div>
     		</div>
     	</div>
@@ -24,7 +24,7 @@
                                     <div class="row form-group m-form__group">
                                         <div class="col-12">
                                             <div class="row m--margin-bottom-10">
-                                                <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                <!-- <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
                                                     <label>Whatsapp:</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -34,21 +34,45 @@
                                                         </div>
                                                         <input type="text" data-name="whatsapp" class="form-control m-input phone" placeholder="(99) 99999-9999" data-option="text" />
                                                     </div>
-                                                </div>
+                                                </div> -->
 
-												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
-                                                    <label>Youtube:</label>
+												<div class="col-lg-5 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Token Pag Seguro:</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text">
-                                                                <i class="la la-youtube"></i>
+                                                                <i class="  la-1x  la la-keyboard-o"></i>
                                                             </span>
                                                         </div>
-                                                        <input type="text" data-name="youtube" class="form-control m-input" placeholder="https://www.youtube.com/c/xxxxxxxxxxxxx" data-option="text" />
+                                                        <input
+															type="text"
+															data-name="token-pag-seguro"
+															class="form-control m-input" placeholder="******************************"
+															data-option="text"
+														/>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+												<div class="col-lg-3 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Email Adm. Pag Seguro:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                            	<i class="  la-1x  la la-user-circle-o"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input
+															type="text"
+															data-name="email-pag-seguro"
+															class="form-control m-input" placeholder="fulano@ciclano.com"
+															data-option="text"
+														/>
+                                                    </div>
+                                                </div>
+
+												<div class="col-4 p-4 my-2"><br></div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
                                                     <label>Instagram:</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -60,7 +84,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
                                                     <label>Facebook:</label>
                                                     <div class="input-group">
                                                         <div class="input-group-prepend">
@@ -71,6 +95,160 @@
                                                         <input type="text" data-name="facebook" class="form-control m-input" placeholder="https://www.facebook.com/xxxxxx/" data-option="text" />
                                                     </div>
                                                 </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Email:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-envelope"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="email" class="form-control m-input" placeholder="exemplo@provedor.com.br" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<!-- <div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2"><br></div> -->
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Whatsapp Destacado:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-whatsapp"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="whatsapp1" class="form-control m-input phone" placeholder="31 99999 9999" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Whatsapp Secundario:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-whatsapp"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="whatsapp2" class="form-control m-input phone" placeholder="31 99999 9999" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Telefone Fixo:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-phone"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="telefone_fixo" class="form-control m-input phone" placeholder="31 9999 9999" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Titulo Endereço 01:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-map"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-t1" class="form-control m-input" placeholder="Loja Barreiro" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Local Endereço 01:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-map"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-l1" class="form-control m-input" placeholder="Av. Bernardo Monteiro, 858 / Funcionários" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Link para o Maps do Endereço 01:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-map"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-m1" class="form-control m-input" placeholder="https://goo.gl/maps/zg1azptS94dwG6FU8" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Telefone do Endereço 01:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-phone"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-p1" class="form-control m-input phone" placeholder="31 9999 9999" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2"><br></div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2"><br></div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Titulo Endereço 02:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-map"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-t2" class="form-control m-input" placeholder="Loja Barreiro" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Local Endereço 02:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-map"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-l2" class="form-control m-input" placeholder="Av. Bernardo Monteiro, 858 / Funcionários" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Link para o Maps do Endereço 02:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-map"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-m2" class="form-control m-input" placeholder="https://goo.gl/maps/zg1azptS94dwG6FU8" data-option="text" />
+                                                    </div>
+                                                </div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
+                                                    <label>Telefone do Endereço 02:</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-phone"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" data-name="end-p2" class="form-control m-input phone" placeholder="31 9999 9999" data-option="text" />
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!--
 
 												<div class="col-lg-4 col-md-6 col-sm-12 p-4 my-2">
                                                     <label>Email:</label>
@@ -118,7 +296,7 @@
                                                         </div>
                                                         <textarea type="text" data-name="endereco-mapa" placeholder="https://www.google.com/maps/embed?pb=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" rows=3 class="form-control m-input" placeholder="" data-option="text"></textarea>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -134,7 +312,7 @@
     										<div class="col-md-4">
     										</div>
                                             <div class="col-md-4 text-right">
-    											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;Salvar o que foi modificado</button>
+    											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;Salvar</button>
     										</div>
     									</div>
     								</div>

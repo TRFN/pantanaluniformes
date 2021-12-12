@@ -1,0 +1,169 @@
+<div role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">{cli_name}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+                    <h5 class="font-weight-semi-bold pt-3">Menu</h5>
+                    <ul class="nav nav-list flex-column">
+                        <li class="nav-item"><a class="nav-link" href="/meu_perfil/">Meu Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/favoritos/">Favoritos</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="/meus_enderecos/">Meus Endereços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/minhas_compras/">Minhas Compras</a></li>
+						<li class="nav-item"><a class="nav-link" href="/carrinho_de_compras/">Carrinho de Compras</a></li>
+						<li class="nav-item"><a class="nav-link" href="/cartoes/" style="color: #d44;">Cart&otilde;es de Cr&eacute;dito</a></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </aside>
+                <br />
+                <a type="button" href="/logout/" class="btn btn-outline btn-danger mb-2">Sair</a>
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <div class="card mb-5">
+							<div class="container shop" id="gerenciar-cartoes">
+
+								<div class="row justify-content-between mx-0">
+									<div class="col-md-6 px-0 mb-3 mb-md-0"><br></div>
+								</div>
+					            <div class="row">
+					                <div class="col">
+					                    <ul class="breadcrumb font-weight-bold text-6 justify-content-left">
+										<li class="text-transform-none me-2">
+											&nbsp;
+										</li>
+											<li class="text-transform-none me-2">
+					                            Cart&otilde;es de Cr&eacute;dito Cadastrados
+					                        </li>
+					                    </ul>
+					                </div>
+					            </div>
+								<div class="row justify-content-between mx-0">
+									<div class="col-md-6 px-0 mb-3 mb-md-0"><br></div>
+								</div>
+					            <div class="row pb-4 mb-5">
+					                <div class="col-lg-12 mb-5 mb-lg-0">
+										<div class="profile-edit-container fl-wrap block_box repeater-instance">
+											<div class="custom-form" data-repeater-list="">
+												<div class="row fixed-data">
+													<div class="col-sm-3">
+														<label class="">CPF <i class="far fa-user"></i></label>
+														<input type="text" class="form-control cpfcnpj" data-name="c_cpf" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-9">
+														<label class="">&nbsp;</label>
+														<input type="hidden" />
+													</div>
+													<div class="col-sm-3"style="clear: both;">
+														<label class="">CEP <i class="far fa-map-maker-alt"></i></label>
+														<input type="text" onblur="buscar_cep()" class="form-control cep" data-name="c_cep" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-7">
+														<label class="">Rua <i class="far fa-map-maker-alt"></i></label>
+														<input type="text" class="form-control" data-name="c_rua" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-2">
+														<label class="">Numero <i class="far fa-map-maker-alt"></i></label>
+														<input type="text" class="form-control" data-name="c_numero" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-4">
+														<label class="">Bairro <i class="far fa-map-maker-alt"></i></label>
+														<input type="text" class="form-control" data-name="c_bairro" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-4">
+														<label class="">Cidade <i class="far fa-map-maker-alt"></i></label>
+														<input type="text" class="form-control" disabled data-name="c_cidade" placeholder="Preenchido pelo Cep" value=""/>
+													</div>
+													<div class="col-sm-4">
+														<label class="">Estado <i class="far fa-map-maker-alt"></i></label>
+														<input type="text" class="form-control" disabled data-name="c_estado" placeholder="Preenchido pelo Cep" value=""/>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-sm-12 text-right"><br>
+														<button data-repeater-create="" class="btn color-bg btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3 ms-2" style="padding: 14px 16px; text-align: center;margin: 0;font-size: 12px;float: right;"><i class="fas fa-plus"></i><span style="display: inline-block; margin-right: 32px;">&nbsp;Adicionar Cartão</span>
+														</button><br>
+													</div>
+												</div>
+												<div class="row my-4" data-repeater-item="">
+													<div class="col-sm-4">
+														<label class="">Nome no cartao <i class="far fa-user"></i></label>
+														<input type="text" class="form-control c_name" data-name="c_name" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-3">
+														<label class="">Numero do Cart&atilde;o <i class="far fa-credit-card"></i></label>
+														<input type="text" class="form-control c_number" data-name="c_number" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-2">
+														<label class="">Expira em <i class="far fa-calendar"></i></label>
+														<input type="text" class="form-control c_expires" data-name="c_expires" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-2">
+														<label class="">CVV <i class="fa fa-key"></i></label>
+														<input type="text" class="form-control c_cvv" data-name="c_cvv" placeholder="" value=""/>
+													</div>
+													<div class="col-sm-1 text-center">
+														<button data-repeater-delete="" class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap py-3 m--hide" style="padding: 29px;text-align: center;margin: 0;transform: scale(0.75);font-size: 26px;margin-top: 19px; background-color: #c22;"><i style="color: #fff!important; " class="fas fa-trash"></i></button>
+													</div>
+												</div>
+											</div>
+											<div class="text-center"><br><br><br><button class="btn color2-bg btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-2 ws-nowrap btn-px-4 py-3 ms-2 submit-form" style="float: none;">Salvar</button></div>
+										</div>
+					                </div>
+					            </div>
+
+								<div class="row justify-content-between mx-0">
+									<div class="col-md-6 px-0 mb-3 mb-md-0"><br></div>
+								</div>
+					        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section section-height-3 m-0">
+  <div class=" container">
+    <div class="row py-5 my-4">
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">PORTAL</h2>
+        <ul class="list list-unstyled mb-0">
+            <li class="font-weight-light mb-1"><a href="https://shemaysrael.com/" target="_blank" class="text-decoration-none text-color-light">&nbsp; www.shemaysrael.com</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">CONTATOS</h2>
+        <ul class="list list-dark list-unstyled mb-0">
+          <li class="font-weight-light mb-1"><i class="fab fa-whatsapp text-color-light"></i> <a href="https://api.whatsapp.com/send?phone=+55{whatsapp1}" target="_blank" class="text-decoration-none text-color-light">&nbsp; {whatsapp1}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-3 text-center">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">REDES SOCIAIS</h2>
+        <ul class="social-icons mx-2 social-icons-medium mx-2 social-icons-clean-with-border mx-2 social-icons-clean-with-border-border-grey mx-2 social-icons-clean-with-border-icon-dark me-3 mb-0">
+          <li class="mx-2 social-icons-instagram">
+            <a href="{instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="mx-2 social-icons-youtube">
+            <a href="{youtube}" target="_blank" title="Instagram"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li class="mx-2 social-icons-facebook">
+            <a href="{facebook}" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div></section></div>
+
+
+<script lwdk-addons lwdk-vars="on" src="js/site/cartoes.js"></script>

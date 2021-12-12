@@ -1,5 +1,28 @@
 <?php
     trait administradores {
+
+		function page_acoes(UITemplate $content){
+			$filtro = isset($_GET["filtro"]) ? $_GET["filtro"]:"*";
+			$btnTxt          = "";
+			$keyword         = "";
+			$db              = $this->log->actions($filtro);
+			$titulos         = "Data,Nome,E-mail,Ação,IP,Cidade/Estado,País";
+			$dados           = "0,1,2,6,3,4,5";
+			$keyid           = "id";
+			$titulo          = "Relatório de ações no sistema";
+
+			foreach(array_keys($db) as $i){
+				$db[$i][0] = date("d/m/Y \à\s H:i", $db[$i][0]);
+				$filtro = urlencode("nome:{$db[$i][1]}");
+				$db[$i][1] = "<a href='/admin/acoes/?filtro={$filtro}'>{$db[$i][1]}</a>";
+				$filtro = urlencode("email:{$db[$i][2]}");
+				$db[$i][2] = "<a href='/admin/acoes/?filtro={$filtro}'>{$db[$i][2]}</a>";
+				$db[$i][3] = "[{$db[$i][3]}]";
+			}
+
+			exit($this->_tablepage($content,$keyword,$titulos,$dados,$keyid,$titulo,$db,$btnTxt,"not",false)->getCode());
+		}
+
         private function ajax_administradores(){
             try{
                 header("Content-Type: application/json");
@@ -11,8 +34,10 @@
                 }
                 $query = $this->database()->query("administradores", "id = {$id}");
                 if(!count($query)){
+					$this->log->post("Criou o seguinte usuário: <a target='_blank' href='/admin/administradores/{$id}/'>{$_POST["nome"]}</a>");
                     $this->database()->push("administradores",array($_POST),"log_remove");
                 } else {
+					$this->log->post("Modificou o seguinte usuário: <a target='_blank' href='/admin/administradores/{$id}/'>{$_POST["nome"]}</a>");
                     $this->database()->setWhere("administradores","id = {$id}",$_POST);
                 }
             } catch(Exception $e){
@@ -22,15 +47,17 @@
         }
 
         function page_administradores($content,$me=false){
-
+			// setcookie("ipdata", urlencode(serialize(array("now"=>date("dmY")))), time()-1800);
+			// $this->dbg($_COOKIE);
             $content->minify = true;
 
             if($this->post())return $this->ajax_administradores();
 
             if(
                 parent::url(2) == "apagar" && (!empty(parent::url(1)) || (string)parent::url(1) == "0") &&
-                count(parent::database()->query("administradores", "id = " . ($query = (string)parent::url(1)))) > 0
+                count($qryarr=parent::database()->query("administradores", "id = " . ($query = (string)parent::url(1)))) > 0
             ){
+				$this->log->post("Apagou o seguinte usuário: {$qryarr[0]["nome"]}");
                 exit(parent::database()->deleteWhere("administradores", "id = {$query}"));
             }
 
@@ -64,7 +91,7 @@
                     unset($vars[0]);
 
                 } elseif(parent::url(1) == "listar"){
-                    $btnTxt          = "Administrador";
+					$btnTxt          = "Administrador";
                     $keyword         = "administradores";
                     $db              = "administradores";
                     $titulos         = "Nome,E-mail";

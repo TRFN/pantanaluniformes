@@ -1,0 +1,115 @@
+<div role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">{cli_name}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+                    <h5 class="font-weight-semi-bold pt-3">Menu</h5>
+                    <ul class="nav nav-list flex-column">
+                        <li class="nav-item"><a class="nav-link" href="/meu_perfil/">Meu Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/favoritos/" style="color: #d44;">Favoritos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/meus_enderecos/">Meus Endereços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/minhas_compras/">Minhas Compras</a></li>
+						<li class="nav-item"><a class="nav-link" href="/carrinho_de_compras/">Carrinho de Compras</a></li>
+						<!-- li class="nav-item"><a class="nav-link" href="/cartoes/">Cart&otilde;es de Cr&eacute;dito</a></li -->
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </aside>
+                <br />
+                <a type="button" href="/logout/" class="btn btn-outline btn-danger mb-2">Sair</a>
+            </div>
+            <div class="col-lg-9">
+                <div class="masonry-loader masonry-loader-showing">
+                    <div class="products row card card-body">
+                        <h3 class="font-weight-semi-bold pt-3">Produtos Favoritos</h3>
+                        <div class="col">
+                            <div class="row products product-thumb-info-list" data-plugin-masonry data-plugin-options="{'layoutMode': 'fitRows'}">
+                                <!-- Início ìtens -->
+                                <!-- <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                                    <div class="product mb-0">
+                                        <div class="product-thumb-info border-0 mb-3">
+                                            <div class="product-thumb-info-badges-wrapper">
+                                                <span class="badge badge-ecommerce badge-danger">
+                                                    <a href="favoritos.html" class="text-color-light" title="Adicionar aos Meus Favoritos"><i class="far fa-heart"></i></a>
+                                                </span>
+                                            </div>
+                                            <div class="addtocart-btn-wrapper">
+                                                <a href="fechar-pedido.html" class="text-decoration-none addtocart-btn" title="Adicionar ao Carrinho">
+                                                    <i class="icon-basket icons"></i>
+                                                </a>
+                                            </div>
+                                            <a href="detalhes.html" class="quick-view text-uppercase font-weight-semibold text-2">
+                                                VER MAIS
+                                            </a>
+                                            <a href="detalhes.html">
+                                                <div class="product-thumb-info-image">
+                                                    <img alt="Amparar BH" class="img-fluid" src="img/products/product-grey-1.jpg" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <a href="#" class="d-block text-uppercase text-decoration-none text-color-default text-color-hover-primary line-height-sm-8 text-0 mb-1">Fisioterapia</a>
+                                                <h3 class="text-3-5 font-weight-medium font-alternative text-transform-none line-height-3 mb-0">
+                                                    <a href="detalhes.html" class="text-color-tertiary">Extensor Master para pernas - ActeExtensor Master para pernas - Acte</a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <p class="price text-5 mb-0 pt-3">
+                                            <span class="sale text-color-dark font-weight-semi-bold"> </span>
+                                            <span class="amount">R$ 59,00</span>
+                                        </p>
+                                        <p class="price text-5 mb-3 pt-0">
+                                            <span class="sale text-color-dark font-weight-semi-bold">R$ 69,00</span>
+                                        </p>
+                                    </div>
+                                </div> -->
+								{favoritos_itens}
+                                <!-- Fim -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section section-height-3 m-0">
+  <div class=" container">
+    <div class="row py-5 my-4">
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">PORTAL</h2>
+        <ul class="list list-unstyled mb-0">
+            <li class="font-weight-light mb-1"><a href="https://shemaysrael.com/" target="_blank" class="text-decoration-none text-color-light">&nbsp; www.shemaysrael.com</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">CONTATOS</h2>
+        <ul class="list list-dark list-unstyled mb-0">
+          <li class="font-weight-light mb-1"><i class="fab fa-whatsapp text-color-light"></i> <a href="https://api.whatsapp.com/send?phone=+55{whatsapp1}" target="_blank" class="text-decoration-none text-color-light">&nbsp; {whatsapp1}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-3 text-center">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">REDES SOCIAIS</h2>
+        <ul class="social-icons mx-2 social-icons-medium mx-2 social-icons-clean-with-border mx-2 social-icons-clean-with-border-border-grey mx-2 social-icons-clean-with-border-icon-dark me-3 mb-0">
+          <li class="mx-2 social-icons-instagram">
+            <a href="{instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="mx-2 social-icons-youtube">
+            <a href="{youtube}" target="_blank" title="Instagram"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li class="mx-2 social-icons-facebook">
+            <a href="{facebook}" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div></section></div>

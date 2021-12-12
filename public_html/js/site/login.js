@@ -4,7 +4,7 @@ LWDKExec(function(){
 			if(result === false){
 				swal.fire("", "Email ou senha incorretos! Tente novamente.", "error");
 			} else {
-				window.location.href = "/";
+				window.location.href = "/{retorno}";
 			}
 		});
 	});

@@ -1,0 +1,66 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title "><span class="d-none d-md-inline">Alterar página </span>{pagina}</h3>
+            </div>
+            <div>
+                <div class="col text-right">
+					<button class="btn btn-outline-danger" onclick="return Go('home')"><i class="la la-arrow-left"></i><span class="d-none d-md-inline">&nbsp;Voltar</span></button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-info" onclick="$('#slideshow').find('.submit:first')[0].click();"><i class="la la-save"></i><span class="d-none d-md-inline">&nbsp;Salvar</span></button>
+                </div>
+    		</div>
+        </div>
+    </div>
+    <!-- END: Subheader -->
+    <div class="m-content">
+        <div class="row">
+            <div class="col-xl-12 col-lg-8 col-12">
+                <div class="m-portlet m-portlet--full-height m-portlet--tabs">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="slideshow">
+                            <div class="m-portlet__body">
+                                <div class="form-group m-form__group row">
+                                    <div class="col-md-5 col-12" class="text-center">
+										<h3 class="col-form-label text-center" style="display: block;">Defina uma nova imagem para ficar ao lado</h3>
+                                        <form action="{myurl}" method="post" class="col-12" id="img_upload" style="border: 0;">
+                                            <div class="m-dropzone" style="border: 0;">
+                                            <div class="m-dropzone__msg dz-message needsclick">
+                                                <h3 class="m-dropzone__msg-title m-btn m-btn--pill btn-outline-info btn" style="padding: 16px;">Clique aqui para realizar o upload</h3>
+                                            </div>
+                                            </div>
+                                        </form>
+		                                <div id="gallery" class="col-12 row fotos-produto"><div class="col text-center">Voc&ecirc; ainda n&atilde;o fez o upload de imagens...</div></div>
+                                    </div>
+									<div class="col-md-6 col-12">
+										<h3 class="col-form-label" style="display: block;">Conteudo da p&aacute;gina</h3>
+										<div style="height: 300px" class="summernote col-12"></div>
+									</div>
+                                </div>
+                                <div class="col-12"><br></div>
+                            </div>
+                            <div class="m-portlet__foot m-portlet__foot--fit">
+								<div class="m-form__actions">
+									<div class="row">
+                                        <div class="col-12"><br>
+										</div>
+                                        <div class="col-md-4">
+										</div>
+                                        <div class="col-md-4 text-right">
+											<button class="btn btn-info submit btn-block"><i class="la la-save"></i>&nbsp;Salvar</button>
+										</div>
+                                            <div class="col-12"><br>
+    										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons lwdk-vars="on" src="js/admin/forms/conteudos-fixos.js"></script>

@@ -1,0 +1,152 @@
+<div role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static d-flex">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">{titulo}</h1>
+					<h6 class="appear-animation {indisponivel} p-2" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="200"><i class="icon icon-info p-1"></i>&nbsp;Produto esgotado</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="border-0 pt-4 m-4">
+        <div class="container shop pb-4">
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <div class="thumb-gallery-wrapper">
+                        <div class="thumb-gallery-detail owl-carousel owl-theme manual nav-inside nav-style-1 nav-dark mb-3">
+                            {imgs}
+                        </div>
+                        <div class="thumb-gallery-thumbs owl-carousel owl-theme manual thumb-gallery-thumbs">
+                            {imgs_thumb}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mb-0 font-weight-bold text-7">{titulo}</h1>
+                    <div class="summary entry-summary position-relative">
+                        <p class="price mb-3">
+                            <span class="sale text-color-dark">{price}</span>
+                            <span class="amount">{old_price}</span>
+                        </p>
+						<div class="text-3-5 mb-3" style="word-wrap: break-word;">
+                            {descricao-curta}
+                        </div>
+                        <ul class="list list-unstyled text-2">
+							<li class="{indisponivel} text-3-5 mb-3 text-color-secondary text-start">
+	                            <b class="text-color-primary">Observa&ccedil;&atilde;o:&nbsp;</b>Este produto est&aacute; esgotado.
+	                        </li>
+                        </ul>
+                        <form class="cart {disponivel}" id="produto_qtd" action="javascript:;" onsubmit="adicionar_carrinho({id},$(this).find('[name=quantity]').val(), true, '#produto_qtd')">
+							<hr />
+							<div class="cart-info-txt" style="font-size: 12px;color: #d00;"></div>
+                            <div class="quantity quantity-lg">
+                                <input type="button" class="minus text-color-hover-light bg-color-hover-primary border-color-hover-primary" value="-" />
+                                <input type="number" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1" />
+                                <input type="button" class="plus text-color-hover-light bg-color-hover-primary border-color-hover-primary" value="+" />
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary">Adicionar ao Carrinho</button>
+                            <hr />
+                        </form>
+						<ul class="list list-unstyled text-2 {virtualh}">
+                            <li class="mb-0 font-weight-semibold"><i class="fas fa-truck me-1"></i> CÁLCULO DE FRETE</li>
+							<li class="mb-0"><br></li>
+							<li class="mb-0">
+								<div class="d-none" id=formas>
+									<label class="d-flex align-items-center text-color-black mb-3 e-loja" for="e-loja" style="line-height: 20px;">
+										RETIRADA: Disponibilidade dos produtos + 1 dia útil | Grátis
+									</label>
+									<label class="d-flex align-items-center text-color-black mb-3 e-pac" for="e-pac" style="line-height: 20px;">
+										PAC: Disponibilidade dos produtos +&nbsp;<span class="prazo_pac">(...)</span>&nbsp;dias úteis |&nbsp;<span class="preco_pac">R$ (...)&nbsp;</span>
+									</label>
+									<label class="d-flex align-items-center text-color-black mb-3 e-sedex" for="e-sedex" style="line-height: 20px;">
+										SEDEX: Disponibilidade dos produtos +&nbsp;<span class="prazo_sedex">(...)</span>&nbsp;dias úteis |&nbsp;<span class="preco_sedex">&nbsp;R$ (...)&nbsp;</span>
+									</label>
+									<label class="d-flex align-items-center text-color-grey mb-3 e-sedex sedex-indisponivel" for="" style="line-height: 20px; display: none!important;">
+										SEDEX: Valor n&atilde;o fornecido pelo "Correios" neste momento.
+									</label>
+									<hr>
+								</div>
+							</li>
+                        </ul>
+                        <div class="quantity quantity-lg {virtualh}" style="width: 50%;">
+                            <input id=cep type="text" class="cep form-control h-auto border-radius-1 line-height-1 py-2" placeholder="Insira seu CEP" />
+                        </div>
+                        <button onclick='CalcShipping("{price}", $("#cep").val()); $("#formas").removeClass("d-none")' class="{virtualh} btn btn-dark btn-modern text-uppercase bg-color-hover-primary border-color-hover-primary">Calcular Frete</button>
+						<ul class="list list-unstyled text-2 {virtuald}">
+                            <li class="mb-0 font-weight-semibold"><i class="fas fa-truck me-1"></i> ENVIO</li>
+							<li class="mb-0"><br></li>
+							<li class="mb-0">Este produto ficar&aacute; disponivel para download em seu perfil e ser&aacute; enviado via email assim que constar o pagamento do mesmo.</li>
+						</ul>
+                        <hr />
+                        <div class="d-flex align-items-center">
+                            <a href="javascript:;" onclick="favoritar_produto(this)" data-prod-id="{id}" class="d-flex align-items-center text-decoration-none text-color-dark text-color-hover-primary font-weight-semibold text-2 fav-item"> <i class="{fav} fa-heart me-1"></i> SALVE NOS FAVORITOS </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <div id="description" class="tabs tabs-simple tabs-simple-full-width-line tabs-product tabs-dark mb-2">
+                        <ul class="nav nav-tabs justify-content-start">
+                            <li class="nav-item"><a class="nav-link active font-weight-bold text-3 text-uppercase py-2 px-3" href="#productDescription" data-bs-toggle="tab">Descrição</a></li>
+                        </ul>
+                        <div class="tab-content p-0">
+                            <div class="tab-pane px-0 py-3 active" id="productDescription" style="word-wrap: break-word;">
+                                {descricao-longa}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4 class="font-weight-semibold text-4 mb-3">PRODUTOS RELACIONADOS</h4>
+                    <hr class="mt-0" />
+                    <div class="products row">
+                        <div class="col">
+                            <div
+                                class="owl-carousel owl-theme nav-style-1 nav-outside nav-outside nav-dark mb-0"
+                                data-plugin-options="{'loop': false, 'autoplay': false, 'items': 4, 'nav': true, 'dots': false, 'margin': 20, 'autoplayHoverPause': true, 'autoHeight': true, 'stagePadding': '75', 'navVerticalOffset': '50px'}"
+                            >
+                                <!-- Início ìtens -->
+                                {indicacoes}
+                                <!-- Fim -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<section class="section section-height-3 m-0">
+  <div class=" container">
+    <div class="row py-5 my-4">
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">PORTAL</h2>
+        <ul class="list list-unstyled mb-0">
+            <li class="font-weight-light mb-1"><a href="https://shemaysrael.com/" target="_blank" class="text-decoration-none text-color-light">&nbsp; www.shemaysrael.com</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">CONTATOS</h2>
+        <ul class="list list-dark list-unstyled mb-0">
+          <li class="font-weight-light mb-1"><i class="fab fa-whatsapp text-color-light"></i> <a href="https://api.whatsapp.com/send?phone=+55{whatsapp1}" target="_blank" class="text-decoration-none text-color-light">&nbsp; {whatsapp1}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-3 text-center">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">REDES SOCIAIS</h2>
+        <ul class="social-icons mx-2 social-icons-medium mx-2 social-icons-clean-with-border mx-2 social-icons-clean-with-border-border-grey mx-2 social-icons-clean-with-border-icon-dark me-3 mb-0">
+          <li class="mx-2 social-icons-instagram">
+            <a href="{instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="mx-2 social-icons-youtube">
+            <a href="{youtube}" target="_blank" title="Instagram"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li class="mx-2 social-icons-facebook">
+            <a href="{facebook}" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div></section></div>

@@ -1,0 +1,92 @@
+<div class="m-subheader ">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title "><span class="d-none d-md-inline">Listar </span>Email<span class="d-none d-md-inline">s para</span> Marketing</h3>
+        </div>
+        <div>
+			<div class="col text-right">
+				<button class="btn btn-outline-danger" onclick="return Go('home')"><i class="la la-arrow-left"></i><span class="d-none d-md-inline">&nbsp;Voltar</span></button>&nbsp;&nbsp;&nbsp;
+				<a href="javascript:;" onclick="baixar_excel();" class="btn btn-outline-success"><i class="la la-save"></i><span class="d-none d-md-inline">&nbsp;Baixar Excel</span></a>&nbsp;&nbsp;&nbsp;
+				<button class="btn btn-info" onclick="filtrar();"><i class="la la-filter"></i><span class="d-none d-md-inline">&nbsp;Filtrar</span></button>
+			</div>
+        </div>
+    </div>
+</div>
+<div class="m-content">
+    <div class="row">
+        <div class="col-lg-12 col-sm-10 col-sm-offset-1 col-lg-offset-0">
+            <div class="card">
+                <div class="card-body">
+                    <table id="tabela-principal" class="table table-bordered text-center" width="100%">
+                         <thead><tr>{thead}</tr></thead>
+                         <tbody>{tbody}</tbody>
+                         <tfoot><tr>{thead}</tr></tfoot>
+                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script lwdk-addons>
+	LWDKExec(()=>{
+		window.baixar_excel = function baixar_excel(){
+			e = MapEl("#tabela-principal tr td", function(){return this.innerText;}, false, false, /string/);
+			ok = !/(Nenhum|registro|encontrado)/i.test(e[0]);
+
+			if(ok){
+				let i,j,chunk = 4;
+				var na = [];
+				for (i=0,j=e.length; i<j; i+=chunk) {
+				    na.push(e.slice(i,i+chunk));
+				}
+
+				$.post("{myurl}", {data:na}, function(file){
+					location.href=(file);
+				});
+			}
+		}
+	});
+
+	LWDKExec(()=>(window.filtrar = () => Swal.fire({
+	  title: 'Aplicar Filtro',
+	  html: `
+
+
+		  <label>Filtrar nome:</label>
+		  <input type="text" id="name" class="swal2-input" placeholder="Ex: Jose Alves"><br>
+
+		  <label>Filtrar por Email:</label>
+		  <input type="text" id="email" class="swal2-input" placeholder="Ex: email@exemplo.com"><br>
+
+		  <label>Filtrar por Data:</label>
+  		  <input type="date" id="data-cadastro" class="swal2-input" placeholder="Ex: {year}"><br>
+	  `,
+	  confirmButtonText: 'Filtrar',
+	  cancelButtonText: 'Voltar',
+	  showCancelButton: true,
+	  focusConfirm: false,
+	  preConfirm: () => {
+		let $data = {};
+	    $(Swal.getPopup()).find("input").each(function(){
+			typeof $(this).attr("id") == "string" && ($data[$(this).attr("id")] = $(this).val());
+		});
+	    return $data;
+	  }
+	}).then((result) => {
+	  typeof result.value === "object" && function(r){
+		  serialize = function(obj) {
+			var str = [];
+			for (var p in obj)
+			  if (obj.hasOwnProperty(p) && obj[p].length > 0) {
+				str.push(encodeURIComponent(obj[p]));
+			} else {
+				str.push("");
+			}
+			return (e=str.join("/")).length > 0 ? ("/" + e):"";
+		};
+
+			Go(`email_marketing/filtrar` + serialize(r));
+	  }(result.value);
+	})));
+</script>

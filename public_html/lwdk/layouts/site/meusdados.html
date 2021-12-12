@@ -1,0 +1,106 @@
+<div role="main" class="main shop">
+    <section class="page-header page-header-classic">
+        <div class="container">
+            <div class="row">
+                <div class="col p-static">
+                    <h1 class="font-weight-bold appear-animation" data-title-border data-appear-animation="maskUp" data-appear-animation-delay="300">{cli_name}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+                    <h5 class="font-weight-semi-bold pt-3">Menu</h5>
+                    <ul class="nav nav-list flex-column">
+                        <li class="nav-item"><a class="nav-link" href="/meu_perfil/" style="color: #d44;">Meu Perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/favoritos/">Favoritos</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="/meus_enderecos/">Meus Endereços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/minhas_compras/">Minhas Compras</a></li>
+						<li class="nav-item"><a class="nav-link" href="/carrinho_de_compras/">Carrinho de Compras</a></li>
+						<!-- li class="nav-item"><a class="nav-link" href="/cartoes/">Cart&otilde;es de Cr&eacute;dito</a></li -->
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </aside>
+                <br />
+                <a type="button" href="/logout/" class="btn btn-outline btn-danger mb-2">Sair</a>
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-12 mb-3">
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <h3 class="font-weight-semi-bold pt-3">MEUS DADOS</h3>
+                                <div class="row justify-content-center">
+                                    <div class="form-wrapper">
+                                        <div id="mudar-perfil">
+                                            <div class="form-group">
+                                                <input type="text" data-name="name" class="form-control" placeholder="Nome" value="{cli_name}" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" data-name="doc" class="form-control cpfcnpj" placeholder="CPF ou CNPJ" value="{cli_doc}" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" data-name="tel" class="form-control tel" placeholder="Telefone" value="{cli_tel}" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" data-name="email" class="form-control" placeholder="E-mail" value="{cli_email}" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" data-name="password" class="form-control" placeholder="Deixe em branco para manter a senha atual" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" data-name="c_password" class="form-control" placeholder="Confirme sua senha" />
+                                            </div>
+                                            <div class="form-group">
+                                                <br />
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-dark btn-modern text-uppercase border-radius-2 font-weight-bold text-3 py-3 submit"><i class="fas fa-pencil-alt"></i> Alterar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<section class="section section-height-3 m-0">
+  <div class=" container">
+    <div class="row py-5 my-4">
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">PORTAL</h2>
+        <ul class="list list-unstyled mb-0">
+            <li class="font-weight-light mb-1"><a href="https://shemaysrael.com/" target="_blank" class="text-decoration-none text-color-light">&nbsp; www.shemaysrael.com</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-4 text-center mb-5 mb-lg-0">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">CONTATOS</h2>
+        <ul class="list list-dark list-unstyled mb-0">
+          <li class="font-weight-light mb-1"><i class="fab fa-whatsapp text-color-light"></i> <a href="https://api.whatsapp.com/send?phone=+55{whatsapp1}" target="_blank" class="text-decoration-none text-color-light">&nbsp; {whatsapp1}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-10 col-md-9 col-lg-3 text-center">
+        <h2 class="text-4 line-height-1 mt-4 mb-4 text-color-light">REDES SOCIAIS</h2>
+        <ul class="social-icons mx-2 social-icons-medium mx-2 social-icons-clean-with-border mx-2 social-icons-clean-with-border-border-grey mx-2 social-icons-clean-with-border-icon-dark me-3 mb-0">
+          <li class="mx-2 social-icons-instagram">
+            <a href="{instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="mx-2 social-icons-youtube">
+            <a href="{youtube}" target="_blank" title="Instagram"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li class="mx-2 social-icons-facebook">
+            <a href="{facebook}" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div></section></div>
+        
+<script src="/js/site/mudar-perfil.js" lwdk-vars="on" lwdk-addons></script>
